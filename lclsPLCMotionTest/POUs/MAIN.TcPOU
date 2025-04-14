@@ -46,29 +46,35 @@ astStates1: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
     eStateGet: ENUM_AxisStates;
     {attribute 'pytmc' := 'pv: MY:PREFIX'}
     fbPositionState1D: FB_PositionState1D;
+
+    {attribute 'pytmc' := '
+      pv: BYTE:ERRORS
+      io: i
+    '}
+    scyclicErrorMessages : ARRAY[1..800] OF BYTE;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[M1.bLimitForwardEnable 	:= bLimitForwardEnable;
 M1.bLimitBackwardEnable := bLimitBackwardEnable;
 
-fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
-
-fbStateSetup(stPositionState:=astStates1[1], sName:='OUT', fPosition:=10);
-fbStateSetup(stPositionState:=astStates1[2], sName:='YAG', fPosition:=20);
-fbStateSetup(stPositionState:=astStates1[3], sName:='TT', fPosition:=30);
+// fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
+//
+// fbStateSetup(stPositionState:=astStates1[1], sName:='OUT', fPosition:=10);
+// fbStateSetup(stPositionState:=astStates1[2], sName:='YAG', fPosition:=20);
+// fbStateSetup(stPositionState:=astStates1[3], sName:='TT', fPosition:=30);
 
 
 M1.bHardwareEnable := TRUE;
 fbmotion1(stMotionStage:=M1);
-
-fbPositionState1D(
-    stMotionStage:=M1,
-    astPositionState:=astStates1,
-    eEnumSet:=eStateSet,
-    eEnumGet:=eStateGet,
-    bEnable:=TRUE,
-);]]></ST>
+//
+// fbPositionState1D(
+//     stMotionStage:=M1,
+//     astPositionState:=astStates1,
+//     eEnumSet:=eStateSet,
+//     eEnumGet:=eStateGet,
+//     bEnable:=TRUE,
+// );]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

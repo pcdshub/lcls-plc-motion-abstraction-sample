@@ -1,9 +1,9 @@
-#!c:/Repos/ads-ioc/R0.6.1///bin/rhel7-x86_64/adsIoc
+#!c:/Repos/ads-ioc/R0.8.0///bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: lcls-motion-test.tsproj
 #        PLC name: lclsPLCMotionTest (lclsPLCMotionTest Instance)
-# Generated using: pytmc 2.15.2.dev0+g73bd2d9.d20230727
+# Generated using: pytmc 2.18.3.dev0+ga0a2c09.d20250331
 # Project version: unknown
 #    Project hash: unknown
 #     PLC IP/host: 172.21.148.154
@@ -38,7 +38,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.148.154")
 epicsEnvSet("AMSID",            "172.21.148.154.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "1178")
+epicsEnvSet("ADS_MAX_PARAMS",   "1173")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -129,10 +129,10 @@ dbLoadRecords("save_restoreStatus.db", "P=PLC:lclsPLCMotionTest:")
 dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
 ## TwinCAT task, application, and project information databases ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:lclsPLCMotionTest,IDX=1")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:lclsPLCMotionTest,IDX=1,TASK_PORT=350")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:lclsPLCMotionTest")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:lclsPLCMotionTest,PROJECT=lcls-motion-test.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.15.2.dev0+g73bd2d9.d20230727,PLC_HOST=172.21.148.154")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:lclsPLCMotionTest,PROJECT=lcls-motion-test.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.3.dev0+ga0a2c09.d20250331,PLC_HOST=172.21.148.154")
 
 #   LCLS General: * (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lclsPLCMotionTest,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
@@ -150,8 +150,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("lclsPLCMotionTest.db", "PORT=$(ASYN_PORT),PREFIX=PLC:lclsPLCMotionTest:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 178
-callbackSetQueueSize(2356)
+# Total records: 173
+callbackSetQueueSize(2346)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:lclsPLCMotionTest:")

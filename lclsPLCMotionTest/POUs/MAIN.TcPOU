@@ -16,11 +16,12 @@ M1: ST_MotionStage := (sName := 'TST:MOTION',
 
 //{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^M1-EL1084^Channel 1^Input'}
 {attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL7031)^STM Status^Status^Digital input 2'}
-bLimitBackwardEnable AT %I* : BOOL;
+bLimitForwardEnable AT %I* : BOOL;
+
 
 //{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^M1-EL1084^Channel 2^Input'}
 {attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL7031)^STM Status^Status^Digital input 1'}
-bLimitForwardEnable AT %I* : BOOL;
+bLimitBackwardEnable AT %I* : BOOL;
 
 
 

@@ -9,7 +9,7 @@
     <WriteProductVersion>false</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>lclsPLCMotionTest</Name>
-    <ProgramVersion>3.1.4026.13</ProgramVersion>
+    <ProgramVersion>3.1.4026.15</ProgramVersion>
     <Application>{a4c645bf-b670-4c70-a61d-d8e415a1f08d}</Application>
     <TypeSystem>{98f8ab73-a3e7-4bbc-890d-430050800338}</TypeSystem>
     <Implicit_Task_Info>{ed5b6a8f-b4ac-4934-aca2-c04f1365fece}</Implicit_Task_Info>

@@ -9,7 +9,7 @@
     <WriteProductVersion>false</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>lclsPLCMotionTest</Name>
-    <ProgramVersion>3.1.4026.15</ProgramVersion>
+    <ProgramVersion>3.1.4026.17</ProgramVersion>
     <Application>{a4c645bf-b670-4c70-a61d-d8e415a1f08d}</Application>
     <TypeSystem>{98f8ab73-a3e7-4bbc-890d-430050800338}</TypeSystem>
     <Implicit_Task_Info>{ed5b6a8f-b4ac-4934-aca2-c04f1365fece}</Implicit_Task_Info>
@@ -20,6 +20,10 @@
   <ItemGroup>
     <Compile Include="DUTs\ENUM_AxisStates.TcDUT">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GVLs\GVL.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
@@ -45,15 +49,17 @@
         </Parameter>
       </Parameters>
     </PlaceholderReference>
-    <PlaceholderReference Include="lcls-twincat-motion">
-      <DefaultResolution>lcls-twincat-motion, * (SLAC)</DefaultResolution>
-      <Namespace>lcls_twincat_motion</Namespace>
-      <Parameters>
-        <Parameter ListName="MOTIONCONSTANTS" xmlns="">
-          <Key>MAX_STATE_MOTORS</Key>
-          <Value>1</Value>
-        </Parameter>
-      </Parameters>
+    <PlaceholderReference Include="LCLS-TwinCAT-Motion-Abstraction">
+      <DefaultResolution>LCLS-TwinCAT-Motion-Abstraction, * (SLAC)</DefaultResolution>
+      <Namespace>LCLS_TwinCAT_Motion_Abstraction</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_MC2">
+      <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_MC2</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_NC">
+      <DefaultResolution>Tc2_NC, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_NC</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>

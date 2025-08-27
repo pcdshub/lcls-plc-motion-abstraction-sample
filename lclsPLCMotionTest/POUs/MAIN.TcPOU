@@ -4,78 +4,33 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 
-{attribute 'pytmc' := 'pv: TST:MOTION'}
-//{attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^M1-EL5042^FB Inputs Channel 1^Position'}
-{attribute 'TcLinkTo' := '.nRawEncoderULINT     := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL5042)^FB Inputs Channel 1^Position'}
-//{attribute 'TcLinkTo' := '.nRawEncoderUINT     := TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL7031)^ENC Status compact^Counter value'}
-M1: ST_MotionStage := (sName := 'TST:MOTION',
-                        bPowerSelf := True,
-                        nEnableMode:= ENUM_StageEnableMode.DURING_MOTION,
-                        fHomePosition:=0.0,
-                        nHomingMode:=ENUM_EpicsHomeCmd.NONE);
+    {attribute 'pytmc' := 'pv: TST:MOTION'}
+    M1 : ST_MotionEpicsInterface;
 
-//{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^M1-EL1084^Channel 1^Input'}
-{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL7031)^STM Status^Status^Digital input 2'}
-bLimitForwardEnable AT %I* : BOOL;
-
-
-//{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^M1-EL1084^Channel 2^Input'}
-{attribute 'TcLinkTo' := 'TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL7031)^STM Status^Status^Digital input 1'}
-bLimitBackwardEnable AT %I* : BOOL;
-
-
-
-fbmotion1 : FB_MotionStage;
-fbStateSetup: FB_StateSetupHelper;
-stDefault: ST_PositionState := (
-    fDelta := 0.5,
-    fVelocity := 1,
-    bMoveOk := TRUE,
-    bValid := TRUE
-);
-;
-astStates1: ARRAY[1..GeneralConstants.MAX_STATES] OF ST_PositionState;
-    {attribute 'pytmc' := '
-      pv: MY:PREFIX:STATES:SET
-      io: io
-    '}
-    eStateSet: ENUM_AxisStates;
-    {attribute 'pytmc' := '
-      pv: MY:PREFIX:STATES:GET
-      io: i
-    '}
-    eStateGet: ENUM_AxisStates;
-    {attribute 'pytmc' := 'pv: MY:PREFIX'}
-    fbPositionState1D: FB_PositionState1D;
-
-    {attribute 'pytmc' := '
-      pv: BYTE:ERRORS
-      io: i
-    '}
-    scyclicErrorMessages : ARRAY[1..800] OF BYTE;
+    fbMotionLogger : FB_MotionLogger;
+    // Persistant storage
+    fbPersistentDataStorage : FB_PersistentDataStorage;
+    {attribute 'pytmc' := 'pv: TST:MOTION'}
+    fbMotionStage : FB_MotionStageNC(	sName := 'NC',
+                                        stMotionEpicsItf := M1,
+                                        AxisRef := NcAxis_GVL.NC,
+                                        iMotionLogger := fbMotionLogger,
+                                        iPersistentDataStorage := fbPersistentDataStorage
+                                    ) := (	HardwareEnable:=TRUE,
+                                            UserEnable:=TRUE,
+                                            LimBackward := TRUE,
+                                            LimForward:=TRUE,
+                                            BrakeMode := E_StageBrakeMode.IF_MOVING,
+                                            EnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+                                            HomeMode:=E_EpicsHomeCmd.ABSOLUTE_SET
+                                    );
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[M1.bLimitForwardEnable 	:= bLimitForwardEnable;
-M1.bLimitBackwardEnable := bLimitBackwardEnable;
-
-// fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
-//
-// fbStateSetup(stPositionState:=astStates1[1], sName:='OUT', fPosition:=10);
-// fbStateSetup(stPositionState:=astStates1[2], sName:='YAG', fPosition:=20);
-// fbStateSetup(stPositionState:=astStates1[3], sName:='TT', fPosition:=30);
-
-
-M1.bHardwareEnable := TRUE;
-fbmotion1(stMotionStage:=M1);
-//
-// fbPositionState1D(
-//     stMotionStage:=M1,
-//     astPositionState:=astStates1,
-//     eEnumSet:=eStateSet,
-//     eEnumGet:=eStateGet,
-//     bEnable:=TRUE,
-// );]]></ST>
+      <ST><![CDATA[fbMotionLogger();
+fbPersistentDataStorage();
+fbMotionStage();
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

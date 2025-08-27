@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.13" ClassName="CDevEtherCATDef" SubType="111">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.17" ClassName="CDevEtherCATDef" SubType="111">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
@@ -100,9 +100,6 @@
 		</AddressInfo>
 		<Image Id="1" AddrType="9" ImageType="3">
 			<Name>Image</Name>
-		</Image>
-		<Image Id="4" AddrType="10" ImageType="3">
-			<Name>Image-2</Name>
 		</Image>
 		<Box Id="1" BoxType="9099">
 			<Name>Term 1 (EK1200)</Name>

@@ -15,7 +15,7 @@
 # Libraries:
 #
 #   LCLS General: * (SLAC)
-#   LCLS-TwinCAT-Motion-Abstraction: * (SLAC)
+#   LCLS_OMotion: * (SLAC)
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
 #   Tc2_NC: * (Beckhoff Automation GmbH)
 #   Tc2_Standard: * -> 3.4.5.0 (Beckhoff Automation GmbH)
@@ -89,8 +89,8 @@ dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:lclsPLCMotionTest,PROJECT=lcls-m
 
 #   LCLS General: * (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lclsPLCMotionTest,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
-#   LCLS-TwinCAT-Motion-Abstraction: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lclsPLCMotionTest,DEPENDENCY=LCLS-TwinCAT-Motion-Abstraction,VERSION=*,VENDOR=SLAC")
+#   LCLS_OMotion: * (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lclsPLCMotionTest,DEPENDENCY=LCLS_OMotion,VERSION=*,VENDOR=SLAC")
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lclsPLCMotionTest,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_NC: * (Beckhoff Automation GmbH)

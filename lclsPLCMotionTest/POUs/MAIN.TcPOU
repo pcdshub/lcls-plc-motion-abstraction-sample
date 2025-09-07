@@ -5,7 +5,7 @@
 VAR
 
     {attribute 'pytmc' := 'pv: TST:MOTION'}
-    M1 : ST_MotionEpicsInterface;
+    M1 : ST_MotionStage;
 
     fbMotionLogger : FB_MotionLogger;
     // Persistant storage

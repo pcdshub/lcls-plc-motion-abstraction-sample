@@ -3,19 +3,34 @@
   <POU Name="MAIN" Id="{7ddf7142-3738-4120-8059-c5d2220b5135}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-
-    {attribute 'pytmc' := 'pv: TST:MOTION'}
-    M1 : ST_MotionStage;
-
-    fbMotionLogger : FB_MotionLogger;
+	// Match the Motor number to the axis number in GVL_Axes
+    {attribute 'pytmc' := 'pv: TST:MOTION:M1'}
+    M1 : ST_MotionStage := (axisRef:=GVL_Axes.Axes[1]);
+	{attribute 'pytmc' := 'pv: TST:MOTION:M2'}
+ 	M2 : ST_MotionStage := (axisRef:=GVL_Axes.Axes[2]);
+    fbMotionLogger : ARRAY[1..2] OF FB_MotionLogger;
     // Persistant storage
-    fbPersistentDataStorage : FB_PersistentDataStorage;
-    {attribute 'pytmc' := 'pv: TST:MOTION'}
-    fbMotionStage : FB_MotionStageNC(	sName := 'NC',
+    fbPersistentDataStorage : ARRAY[1..2] OF FB_PersistentDataStorage;
+    {attribute 'pytmc' := 'pv: TST:MOTION:M1'}
+    fbMotionStage1 : FB_MotionStageNC(	sName := 'M2',
                                         stMotionEpicsItf := M1,
-                                        AxisRef := NcAxis_GVL.NC,
-                                        iMotionLogger := fbMotionLogger,
-                                        iPersistentDataStorage := fbPersistentDataStorage
+                                        AxisRef := M2.axisRef,
+                                        iMotionLogger := fbMotionLogger[1],
+                                        iPersistentDataStorage := fbPersistentDataStorage[1]
+                                    ) := (	HardwareEnable:=TRUE,
+                                            UserEnable:=TRUE,
+                                            LimBackward := TRUE,
+                                            LimForward:=TRUE,
+                                            BrakeMode := E_StageBrakeMode.IF_MOVING,
+                                            EnableMode:=ENUM_StageEnableMode.DURING_MOTION,
+                                            HomeMode:=E_EpicsHomeCmd.ABSOLUTE_SET
+                                    );
+    {attribute 'pytmc' := 'pv: TST:MOTION:M2'}
+    fbMotionStage2 : FB_MotionStageNC(	sName := 'M2',
+                                        stMotionEpicsItf := M2,
+                                        AxisRef := M1.axisRef,
+                                        iMotionLogger := fbMotionLogger[2],
+                                        iPersistentDataStorage := fbPersistentDataStorage[2]
                                     ) := (	HardwareEnable:=TRUE,
                                             UserEnable:=TRUE,
                                             LimBackward := TRUE,
@@ -27,9 +42,12 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbMotionLogger();
-fbPersistentDataStorage();
-fbMotionStage();
+      <ST><![CDATA[fbMotionLogger[1]();
+fbPersistentDataStorage[1]();
+fbMotionLogger[2]();
+fbPersistentDataStorage[2]();
+fbMotionStage1();
+fbMotionStage1();
 ]]></ST>
     </Implementation>
   </POU>

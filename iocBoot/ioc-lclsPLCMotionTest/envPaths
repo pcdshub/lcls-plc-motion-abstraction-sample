@@ -1,0 +1,2 @@
+epicsEnvSet("IOC_TOP", "/c/Users/yanns/Documents/lcls/libs/lcsl-motion-samples/iocBoot/ioc-lclsPLCMotionTest")
+epicsEnvSet("IOC_DATA", "/cds/data/iocData")

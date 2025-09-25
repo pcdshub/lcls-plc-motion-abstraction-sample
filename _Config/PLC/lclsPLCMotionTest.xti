@@ -983,18 +983,13 @@ External Setpoint Generation:
 		</DataType>
 	</DataTypes>
 	<Project GUID="{E31ADAA4-9B77-495F-982E-6D67EFCA2359}" Name="lclsPLCMotionTest" PrjFilePath="..\..\lclsPLCMotionTest\lclsPLCMotionTest.plcproj" TmcFilePath="..\..\lclsPLCMotionTest\lclsPLCMotionTest.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcHash="{FE492BF7-75D2-0A1E-7AE0-F63E5516F7B5}" TmcPath="lclsPLCMotionTest\lclsPLCMotionTest.tmc">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcHash="{C93571CE-7C32-70CD-A968-7DFBC1840A69}" TmcPath="lclsPLCMotionTest\lclsPLCMotionTest.tmc">
 			<Name>lclsPLCMotionTest Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
 				<Var>
-					<Name>MAIN.fbMotionStage1.fbBrake.bBrakeRelease</Name>
-					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMotionStage2.fbBrake.bBrakeRelease</Name>
+					<Name>MAIN.fbMotionStage.fbBrake.bBrakeRelease</Name>
 					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
@@ -1010,82 +1005,42 @@ External Setpoint Generation:
 			<Vars VarGrpType="1">
 				<Name>PlcTask Inputs</Name>
 				<Var>
-					<Name>MAIN.fbMotionStage1.fbMotionInterlocksCommon.bHardwareEnable</Name>
+					<Name>MAIN.fbMotionStage.fbMotionInterlocksCommon.bHardwareEnable</Name>
 					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage1.fbLimSwStatus.bLimitForwardEnable</Name>
+					<Name>MAIN.fbMotionStage.fbLimSwStatus.bLimitForwardEnable</Name>
 					<Comment><![CDATA[ Hardware 
  NC Forward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage1.fbLimSwStatus.bLimitBackwardEnable</Name>
+					<Name>MAIN.fbMotionStage.fbLimSwStatus.bLimitBackwardEnable</Name>
 					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage1.fbLimSwStatus.bLimitHome</Name>
+					<Name>MAIN.fbMotionStage.fbLimSwStatus.bLimitHome</Name>
 					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
 					<Type>BOOL</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage1.fbEncoderScaling.nRawEncoderULINT</Name>
+					<Name>MAIN.fbMotionStage.fbEncoderScaling.nRawEncoderULINT</Name>
 					<Type>ULINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage1.fbEncoderScaling.nRawEncoderUINT</Name>
+					<Name>MAIN.fbMotionStage.fbEncoderScaling.nRawEncoderUINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
 					<Type>UINT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage1.fbEncoderScaling.nRawEncoderINT</Name>
+					<Name>MAIN.fbMotionStage.fbEncoderScaling.nRawEncoderINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
 					<Type>INT</Type>
 				</Var>
 				<Var>
-					<Name>MAIN.fbMotionStage1.fbEncoderScaling.nRawEncoderDINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMotionStage2.fbMotionInterlocksCommon.bHardwareEnable</Name>
-					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMotionStage2.fbLimSwStatus.bLimitForwardEnable</Name>
-					<Comment><![CDATA[ Hardware 
- NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMotionStage2.fbLimSwStatus.bLimitBackwardEnable</Name>
-					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMotionStage2.fbLimSwStatus.bLimitHome</Name>
-					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMotionStage2.fbEncoderScaling.nRawEncoderULINT</Name>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMotionStage2.fbEncoderScaling.nRawEncoderUINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMotionStage2.fbEncoderScaling.nRawEncoderINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.fbMotionStage2.fbEncoderScaling.nRawEncoderDINT</Name>
+					<Name>MAIN.fbMotionStage.fbEncoderScaling.nRawEncoderDINT</Name>
 					<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
 					<Type>DINT</Type>
 				</Var>

@@ -28,6 +28,8 @@ TST:MOTION:M1:PLC:AxisPar:EncScaling_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:AxisPar:SLimMax_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:AxisPar:SLimMin_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:AxisPar:MaxVel_RBV.VAL	1	scan
+TST:MOTION:M1:PLC:bHalt_RBV.VAL	1	scan
+TST:MOTION:M1:PLC:bHalt.VAL	1	scan
 TST:MOTION:M1:PLC:bHomeCmd_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:bHomeCmd.VAL	1	scan
 TST:MOTION:M1:PLC:bMoveCmd_RBV.VAL	1	scan
@@ -58,6 +60,7 @@ TST:MOTION:M1:PLC:AxisStatus:PLC:bHomeSensor_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:AxisStatus:PLC:bHomed_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:AxisStatus:PLC:bLimitBwd_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:AxisStatus:PLC:bLimitFwd_RBV.VAL	1	scan
+TST:MOTION:M1:PLC:AxisStatus:PLC:bWarning_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:AxisStatus:PLC:fActDiff_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:AxisStatus:PLC:fActPosition_RBV.VAL	1	scan
 TST:MOTION:M1:PLC:AxisStatus:PLC:fActVelocity_RBV.VAL	1	scan

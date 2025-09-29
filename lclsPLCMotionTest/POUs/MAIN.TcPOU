@@ -5,10 +5,7 @@
 VAR
     fbMotionLogger :FB_MotionLogger;
     fbPersistentDataStorage : FB_PersistentDataStorage;
-	{attribute 'pytmc' := '
-		axis-link: GVL_Axes.Axes[1]
-		pv: TST:MOTION:M1
-	'}
+
    	fbMotionStage : FB_MotionStageNC(	sName := 'M1',
                                         AxisRef := GVL_Axes.Axes[1],
                                         iMotionLogger := fbMotionLogger,

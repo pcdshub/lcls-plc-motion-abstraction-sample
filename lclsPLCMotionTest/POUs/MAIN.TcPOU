@@ -3,20 +3,20 @@
   <POU Name="MAIN" Id="{7ddf7142-3738-4120-8059-c5d2220b5135}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
-    fbMotionLogger :FB_MotionLogger;
     fbPersistentDataStorage : FB_PersistentDataStorage;
-
-   	fbMotionStage : FB_MotionStageNC(	sName := 'M1',
+	{attribute 'pytmc' := '
+		axis-link: GVL_Axes.Axes[1]
+		pv: TST:MOTION:SLITX
+	'}
+   	slitX : FB_MotionStageNC(	sName := 'slitX',
                                         AxisRef := GVL_Axes.Axes[1],
-                                        iMotionLogger := fbMotionLogger,
                                         iPersistentDataStorage := fbPersistentDataStorage
                                     ) ;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[fbMotionLogger();
-fbPersistentDataStorage();
-fbMotionStage();
+      <ST><![CDATA[fbPersistentDataStorage();
+slitX();
 
 ]]></ST>
     </Implementation>

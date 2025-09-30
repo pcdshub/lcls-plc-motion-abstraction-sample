@@ -49,9 +49,9 @@
         </Parameter>
       </Parameters>
     </PlaceholderReference>
-    <PlaceholderReference Include="LCLS_OMotion">
-      <DefaultResolution>LCLS_OMotion, * (SLAC)</DefaultResolution>
-      <Namespace>LCLS_OMotion</Namespace>
+    <PlaceholderReference Include="lcls-twincat-motion-abstraction">
+      <DefaultResolution>lcls-twincat-motion-abstraction, * (SLAC)</DefaultResolution>
+      <Namespace>lcls_twincat_motion_abstraction</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>

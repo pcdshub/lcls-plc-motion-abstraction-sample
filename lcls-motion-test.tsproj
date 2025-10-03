@@ -76,7 +76,7 @@
 			</SubItem>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{8FC85561-A465-4EB1-B35A-29FB3B87DEE1}" Target64Bit="true" ShowHideConfigurations="#x6">
+	<Project ProjectGUID="{8FC85561-A465-4EB1-B35A-29FB3B87DEE1}" TargetNetId="192.168.1.172.1.1" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
 			<Settings MaxCpus="4" CoresPerPkg="1">
 				<Cpu CpuId="3"/>

@@ -12,6 +12,11 @@ VAR
                                         AxisRef := GVL_Axes.Axes[1],
                                         iPersistentDataStorage := fbPersistentDataStorage
                                     ) ;
+	{attribute 'pytmc' := 'pv: TST:MOTION:M1'}
+	M1: ST_MotionStage := (sName := 'TST:MOTION',
+							bPowerSelf := True,
+							fHomePosition:=0.0,
+							nHomingMode:=ENUM_EpicsHomeCmd.NONE);
 END_VAR
 ]]></Declaration>
     <Implementation>

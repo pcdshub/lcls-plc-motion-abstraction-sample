@@ -10,7 +10,7 @@ def get_args():
     )
     parser.add_argument(
         "--motor", type=str, required=True,
-        help="EPICS PV prefix for the axis, e.g. 'TST:MOTION:M1:PLC:'"
+        help="EPICS PV prefix for the axis, e.g. 'TST:MOTION:M1:'"
     )
     parser.add_argument(
         "--num-moves", type=int, default=5,
@@ -45,13 +45,13 @@ PVNAMES = {
     "nCommand":         MOTOR + "nCommand",
     "bBacklashEnable":  MOTOR + "bBacklashEnable",
     "fBacklashComp":    MOTOR + "fBacklashComp",
-    "fActPosition":     MOTOR + "AxisStatus:PLC:fActPosition_RBV",
-    "bDone":            MOTOR + "AxisStatus:PLC:bDone_RBV",
-    "bBusy":            MOTOR + "AxisStatus:PLC:bBusy_RBV",
-    "bError":           MOTOR + "AxisStatus:PLC:bError_RBV",
-    "nErrorId":         MOTOR + "AxisStatus:PLC:nErrorId_RBV",
-    "bHomed":           MOTOR + "AxisStatus:PLC:bHomed_RBV",
-    "sErrorMessage":    MOTOR + "AxisStatus:PLC:sErrorMessage_RBV",
+    "fActPosition":     MOTOR + "AxisStatus:fActPosition_RBV",
+    "bDone":            MOTOR + "AxisStatus:bDone_RBV",
+    "bBusy":            MOTOR + "AxisStatus:bBusy_RBV",
+    "bError":           MOTOR + "AxisStatus:bError_RBV",
+    "nErrorId":         MOTOR + "AxisStatus:nErrorId_RBV",
+    "bHomed":           MOTOR + "AxisStatus:bHomed_RBV",
+    "sErrorMessage":    MOTOR + "AxisStatus:sErrorMessage_RBV",
     "bBacklashStatus":  MOTOR + "bBacklashStatus_RBV",
     "fMeasuredBacklashComp": MOTOR + "fMeasuredBacklashComp_RBV",
 }

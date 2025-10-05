@@ -6,8 +6,8 @@
 # Generated using: pytmc 2.18.2
 # Project version: unknown
 #    Project hash: unknown
-#     PLC IP/host: 192.168.1.172
-#      PLC Net ID: 192.168.1.172.1.1
+#     PLC IP/host: 172.21.148.154
+#      PLC Net ID: 172.21.148.154.1.1
 # ** DEVELOPMENT MODE IOC **
 # * Using IOC boot directory for autosave.
 # * Archiver settings will not be configured.
@@ -15,7 +15,7 @@
 # Libraries:
 #
 #   LCLS General: * (SLAC)
-#   LCLS_MotionAbstraction: * (SLAC)
+#   LCLS_OOPMotion: * (SLAC)
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
 #   Tc2_NC: * (Beckhoff Automation GmbH)
 #   Tc2_Standard: * -> 3.4.5.0 (Beckhoff Automation GmbH)
@@ -37,8 +37,8 @@ dbLoadDatabase("$(ADS_IOC_TOP)/dbd/adsIoc.dbd")
 adsIoc_registerRecordDeviceDriver(pdbbase)
 
 epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
-epicsEnvSet("IPADDR",           "192.168.1.172")
-epicsEnvSet("AMSID",            "192.168.1.172.1.1")
+epicsEnvSet("IPADDR",           "172.21.148.154")
+epicsEnvSet("AMSID",            "172.21.148.154.1.1")
 epicsEnvSet("AMS_PORT",         "851")
 epicsEnvSet("ADS_MAX_PARAMS",   "1198")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
@@ -47,7 +47,7 @@ epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
 
 # Add a route to the PLC automatically:
-system("${ADS_IOC_TOP}/scripts/add_route.sh 192.168.1.172 ^172.*$")
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.148.154 ^172.*$")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -85,12 +85,12 @@ dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:lclsPLCMotionTest,IDX=1,TASK_PORT=350")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:lclsPLCMotionTest")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:lclsPLCMotionTest,PROJECT=lcls-motion-test.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.2,PLC_HOST=192.168.1.172")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:lclsPLCMotionTest,PROJECT=lcls-motion-test.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.2,PLC_HOST=172.21.148.154")
 
 #   LCLS General: * (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lclsPLCMotionTest,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
-#   LCLS_MotionAbstraction: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lclsPLCMotionTest,DEPENDENCY=LCLS_MotionAbstraction,VERSION=*,VENDOR=SLAC")
+#   LCLS_OOPMotion: * (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lclsPLCMotionTest,DEPENDENCY=LCLS_OOPMotion,VERSION=*,VENDOR=SLAC")
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lclsPLCMotionTest,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_NC: * (Beckhoff Automation GmbH)

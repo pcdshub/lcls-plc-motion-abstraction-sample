@@ -12,16 +12,34 @@ VAR
                                         AxisRef := GVL_Axes.Axes[1],
                                         iPersistentDataStorage := fbPersistentDataStorage
                                     ) ;
-	{attribute 'pytmc' := 'pv: TST:MOTION:M1'}
-	M1: ST_MotionStage := (sName := 'TST:MOTION',
-							bPowerSelf := True,
-							fHomePosition:=0.0,
-							nHomingMode:=ENUM_EpicsHomeCmd.NONE);
+	{attribute 'pytmc' := '
+		axis-link: GVL_Axes.Axes[2]
+		pv: TST:MOTION:SLITY
+	'}
+   	slitY : FB_MotionStageNC(	sName := 'slitY',
+                                        AxisRef := GVL_Axes.Axes[2],
+                                        iPersistentDataStorage := fbPersistentDataStorage
+                                    ) ;
+	{attribute 'pytmc' := '
+		axis-link: GVL_Axes.Axes[3]
+		pv: TST:MOTION:SLITZ
+	'}
+   	slitZ : FB_MotionStageNC(	sName := 'slitZ',
+                                        AxisRef := GVL_Axes.Axes[3],
+                                        iPersistentDataStorage := fbPersistentDataStorage
+                                    ) ;
+   	dummy : FB_MotionStageNC(	sName := 'dummy',
+                                        AxisRef := GVL_Axes.Axes[4],
+                                        iPersistentDataStorage := fbPersistentDataStorage
+                                    ) ;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[fbPersistentDataStorage();
 slitX();
+slitY();
+slitZ();
+dummy();
 
 ]]></ST>
     </Implementation>

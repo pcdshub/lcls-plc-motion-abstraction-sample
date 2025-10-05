@@ -49,13 +49,9 @@
         </Parameter>
       </Parameters>
     </PlaceholderReference>
-    <PlaceholderReference Include="lcls-twincat-motion">
-      <DefaultResolution>lcls-twincat-motion, * (SLAC)</DefaultResolution>
-      <Namespace>lcls_twincat_motion</Namespace>
-    </PlaceholderReference>
-    <PlaceholderReference Include="lcls-twincat-motion-abstraction">
-      <DefaultResolution>lcls-twincat-motion-abstraction, * (SLAC)</DefaultResolution>
-      <Namespace>lcls_twincat_motion_abstraction</Namespace>
+    <PlaceholderReference Include="LCLS_MotionAbstraction">
+      <DefaultResolution>LCLS_MotionAbstraction, * (SLAC)</DefaultResolution>
+      <Namespace>LCLS_MotionAbstraction</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_MC2">
       <DefaultResolution>Tc2_MC2, * (Beckhoff Automation GmbH)</DefaultResolution>

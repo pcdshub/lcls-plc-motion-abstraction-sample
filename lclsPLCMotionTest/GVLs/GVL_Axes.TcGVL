@@ -3,7 +3,7 @@
   <GVL Name="GVL_Axes" Id="{b26e4e39-7a8c-452f-bac4-bbe855cef5f7}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-    Axes :  ARRAY[1..2] OF AXIS_REF;
+    Axes :  ARRAY[1..4] OF AXIS_REF;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

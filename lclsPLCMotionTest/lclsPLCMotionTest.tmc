@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance2" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{1D9C9623-DEFA-1CE7-55DA-BAE52BB9A6EB}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance2" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{945B6139-D4DA-45A7-6228-83E64996795C}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="LCLS_General">ST_System</Name>
@@ -36262,10 +36262,10 @@ External Setpoint Generation:
       </SubItem>
       <Properties>
         <Property>
-          <Name>Tc2GvlVarNames</Name>
+          <Name>parameterlist</Name>
         </Property>
         <Property>
-          <Name>parameterlist</Name>
+          <Name>Tc2GvlVarNames</Name>
         </Property>
       </Properties>
     </DataType>
@@ -42540,7 +42540,7 @@ External Setpoint Generation:
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2025-10-05T15:25:10</Value>
+          <Value>2025-10-07T14:34:12</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>

@@ -113,7 +113,7 @@ record(bi, "TST:MOTION:SLITX:bBacklashStatus_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:fBacklashComp_RBV") {
+record(ai, "TST:MOTION:SLITX:fBacklash_RBV") {
   field(DESC, "Backlash compensation")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -126,7 +126,7 @@ record(ai, "TST:MOTION:SLITX:fBacklashComp_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ao, "TST:MOTION:SLITX:fBacklashComp") {
+record(ao, "TST:MOTION:SLITX:fBacklash") {
   field(DESC, "Backlash compensation")
   field(DTYP, "asynFloat64")
   field(UDFS, "0")
@@ -225,7 +225,7 @@ record(bo, "TST:MOTION:SLITX:bUserEnable") {
   info(archive, "VAL")
 }
 
-record(longin, "TST:MOTION:SLITX:AxisPar:PosLagEn_RBV") {
+record(longin, "TST:MOTION:SLITX:PosLagEn_RBV") {
   # TRUE if position lag monitor (also known as stall monitor) is enabled.
   field(DESC, "TRUE if position lag...itor) is enabled.")
   field(SCAN, "I/O Intr")
@@ -238,7 +238,7 @@ record(longin, "TST:MOTION:SLITX:AxisPar:PosLagEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITX:AxisPar:SLimMaxEn_RBV") {
+record(longin, "TST:MOTION:SLITX:SLimMaxEn_RBV") {
   # TRUE if controller static maximum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -251,7 +251,7 @@ record(longin, "TST:MOTION:SLITX:AxisPar:SLimMaxEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITX:AxisPar:SLimMinEn_RBV") {
+record(longin, "TST:MOTION:SLITX:SLimMinEn_RBV") {
   # TRUE if controller static minimum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -264,7 +264,7 @@ record(longin, "TST:MOTION:SLITX:AxisPar:SLimMinEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisPar:MaxAccel_RBV") {
+record(ai, "TST:MOTION:SLITX:MaxAccel_RBV") {
   # Maximum rate of increase in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of incr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -278,7 +278,7 @@ record(ai, "TST:MOTION:SLITX:AxisPar:MaxAccel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisPar:PosLagVal_RBV") {
+record(ai, "TST:MOTION:SLITX:PosLagVal_RBV") {
   field(DESC, "Maximum magnitude of position lag in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -291,7 +291,7 @@ record(ai, "TST:MOTION:SLITX:AxisPar:PosLagVal_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisPar:PosLagTime_RBV") {
+record(ai, "TST:MOTION:SLITX:PosLagTime_RBV") {
   # Maximum allowable duration outside of maximum position lag value in seconds.
   field(DESC, "Maximum allowable du...value in seconds.")
   field(SCAN, "I/O Intr")
@@ -305,7 +305,7 @@ record(ai, "TST:MOTION:SLITX:AxisPar:PosLagTime_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisPar:MaxDecel_RBV") {
+record(ai, "TST:MOTION:SLITX:MaxDecel_RBV") {
   # Maximum rate of decrease in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of decr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -319,7 +319,7 @@ record(ai, "TST:MOTION:SLITX:AxisPar:MaxDecel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisPar:EncOffset_RBV") {
+record(ai, "TST:MOTION:SLITX:EncOffset_RBV") {
   field(DESC, "Encoder offset in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -332,7 +332,7 @@ record(ai, "TST:MOTION:SLITX:AxisPar:EncOffset_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisPar:EncScaling_RBV") {
+record(ai, "TST:MOTION:SLITX:EncScaling_RBV") {
   # Encoder scaling numerator / denominator in EU/COUNT.
   field(DESC, "Encoder scaling nume...ator in EU/COUNT.")
   field(SCAN, "I/O Intr")
@@ -346,7 +346,7 @@ record(ai, "TST:MOTION:SLITX:AxisPar:EncScaling_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisPar:SLimMax_RBV") {
+record(ai, "TST:MOTION:SLITX:SLimMax_RBV") {
   # Maximum commandable position of the axis in EU.
   field(DESC, "Maximum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -360,7 +360,7 @@ record(ai, "TST:MOTION:SLITX:AxisPar:SLimMax_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisPar:SLimMin_RBV") {
+record(ai, "TST:MOTION:SLITX:SLimMin_RBV") {
   # Minimum commandable position of the axis in EU.
   field(DESC, "Minimum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -374,7 +374,7 @@ record(ai, "TST:MOTION:SLITX:AxisPar:SLimMin_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisPar:MaxVel_RBV") {
+record(ai, "TST:MOTION:SLITX:MaxVel_RBV") {
   # Maximum commandable speed of the axis in EU/s.
   field(DESC, "Maximum commandable ...the axis in EU/s.")
   field(SCAN, "I/O Intr")
@@ -684,13 +684,13 @@ record(longout, "TST:MOTION:SLITX:nCommand") {
   info(archive, "VAL")
 }
 
-record(bi, "TST:MOTION:SLITX:AxisStatus:bBusy_RBV") {
-  field(DESC, "TRUE if in the middle of a command")
+record(bi, "TST:MOTION:SLITX:bBusy_RBV") {
+  field(DESC, "TRUE move request is busy")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitX.stMotionStatus.bBusy?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitX.stMotionStatus.bBusy?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -698,7 +698,7 @@ record(bi, "TST:MOTION:SLITX:AxisStatus:bBusy_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITX:AxisStatus:bDone_RBV") {
+record(bi, "TST:MOTION:SLITX:bDone_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -712,13 +712,13 @@ record(bi, "TST:MOTION:SLITX:AxisStatus:bDone_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITX:AxisStatus:bEnabled_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITX:bEnabled_RBV") {
+  field(DESC, "")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitX.stMotionStatus.bEnabled?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitX.stMotionStatus.bEnabled?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -726,13 +726,13 @@ record(bi, "TST:MOTION:SLITX:AxisStatus:bEnabled_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITX:AxisStatus:bError_RBV") {
+record(bi, "TST:MOTION:SLITX:bError_RBV") {
   field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitX.stMotionStatus.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitX.stMotionStatus.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -740,8 +740,8 @@ record(bi, "TST:MOTION:SLITX:AxisStatus:bError_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITX:AxisStatus:bHomeSensor_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITX:bHomeSensor_RBV") {
+  field(DESC, "Home sensor")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -754,14 +754,14 @@ record(bi, "TST:MOTION:SLITX:AxisStatus:bHomeSensor_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITX:AxisStatus:bHomed_RBV") {
+record(bi, "TST:MOTION:SLITX:bHomed_RBV") {
   # TRUE if the motor has been homed, or does not need to be homed
   field(DESC, "TRUE if the motor ha... need to be homed")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitX.stMotionStatus.bHomed?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitX.stMotionStatus.bHomed?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -769,8 +769,8 @@ record(bi, "TST:MOTION:SLITX:AxisStatus:bHomed_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITX:AxisStatus:bLimitBwd_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITX:bLimitBwd_RBV") {
+  field(DESC, "Backward limit enable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -783,8 +783,8 @@ record(bi, "TST:MOTION:SLITX:AxisStatus:bLimitBwd_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITX:AxisStatus:bLimitFwd_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITX:bLimitFwd_RBV") {
+  field(DESC, "Forward limit enable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -797,7 +797,7 @@ record(bi, "TST:MOTION:SLITX:AxisStatus:bLimitFwd_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITX:AxisStatus:bWarning_RBV") {
+record(bi, "TST:MOTION:SLITX:bWarning_RBV") {
   field(DESC, "Interlocks Warning")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -811,34 +811,34 @@ record(bi, "TST:MOTION:SLITX:AxisStatus:bWarning_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisStatus:fActDiff_RBV") {
-  field(DESC, "Error code if nonzero")
+record(ai, "TST:MOTION:SLITX:fActDiff_RBV") {
+  field(DESC, "Actual position diff")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitX.stMotionStatus.fActDiff?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitX.stMotionStatus.fActDiff?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisStatus:fActPosition_RBV") {
-  field(DESC, "Error code if nonzero")
+record(ai, "TST:MOTION:SLITX:fActPosition_RBV") {
+  field(DESC, "Actual position")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitX.stMotionStatus.fActPosition?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitX.stMotionStatus.fActPosition?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisStatus:fActVelocity_RBV") {
-  field(DESC, "Error code if nonzero")
+record(ai, "TST:MOTION:SLITX:fActVelocity_RBV") {
+  field(DESC, "Actual velocity")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -850,7 +850,7 @@ record(ai, "TST:MOTION:SLITX:AxisStatus:fActVelocity_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITX:AxisStatus:fOverride_RBV") {
+record(ai, "TST:MOTION:SLITX:fOverride_RBV") {
   field(DESC, "Used internally to set power override")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -863,19 +863,19 @@ record(ai, "TST:MOTION:SLITX:AxisStatus:fOverride_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITX:AxisStatus:nErrorId_RBV") {
+record(longin, "TST:MOTION:SLITX:nErrorId_RBV") {
   field(DESC, "Error code if nonzero")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitX.stMotionStatus.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitX.stMotionStatus.nErrorId?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITX:AxisStatus:nMotionAxisID_RBV") {
+record(longin, "TST:MOTION:SLITX:nMotionAxisID_RBV") {
   # Unique ID assigned to each axis in the NC
   field(DESC, "Unique ID assigned t...ch axis in the NC")
   field(SCAN, "I/O Intr")
@@ -888,13 +888,13 @@ record(longin, "TST:MOTION:SLITX:AxisStatus:nMotionAxisID_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "TST:MOTION:SLITX:AxisStatus:sErrorMessage_RBV") {
+record(waveform, "TST:MOTION:SLITX:sErrorMessage_RBV") {
   field(DESC, "Message to identify the error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitX.stMotionStatus.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitX.stMotionStatus.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -943,7 +943,7 @@ record(bi, "TST:MOTION:SLITY:bBacklashStatus_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:fBacklashComp_RBV") {
+record(ai, "TST:MOTION:SLITY:fBacklash_RBV") {
   field(DESC, "Backlash compensation")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -956,7 +956,7 @@ record(ai, "TST:MOTION:SLITY:fBacklashComp_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ao, "TST:MOTION:SLITY:fBacklashComp") {
+record(ao, "TST:MOTION:SLITY:fBacklash") {
   field(DESC, "Backlash compensation")
   field(DTYP, "asynFloat64")
   field(UDFS, "0")
@@ -1055,7 +1055,7 @@ record(bo, "TST:MOTION:SLITY:bUserEnable") {
   info(archive, "VAL")
 }
 
-record(longin, "TST:MOTION:SLITY:AxisPar:PosLagEn_RBV") {
+record(longin, "TST:MOTION:SLITY:PosLagEn_RBV") {
   # TRUE if position lag monitor (also known as stall monitor) is enabled.
   field(DESC, "TRUE if position lag...itor) is enabled.")
   field(SCAN, "I/O Intr")
@@ -1068,7 +1068,7 @@ record(longin, "TST:MOTION:SLITY:AxisPar:PosLagEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITY:AxisPar:SLimMaxEn_RBV") {
+record(longin, "TST:MOTION:SLITY:SLimMaxEn_RBV") {
   # TRUE if controller static maximum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -1081,7 +1081,7 @@ record(longin, "TST:MOTION:SLITY:AxisPar:SLimMaxEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITY:AxisPar:SLimMinEn_RBV") {
+record(longin, "TST:MOTION:SLITY:SLimMinEn_RBV") {
   # TRUE if controller static minimum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -1094,7 +1094,7 @@ record(longin, "TST:MOTION:SLITY:AxisPar:SLimMinEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisPar:MaxAccel_RBV") {
+record(ai, "TST:MOTION:SLITY:MaxAccel_RBV") {
   # Maximum rate of increase in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of incr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -1108,7 +1108,7 @@ record(ai, "TST:MOTION:SLITY:AxisPar:MaxAccel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisPar:PosLagVal_RBV") {
+record(ai, "TST:MOTION:SLITY:PosLagVal_RBV") {
   field(DESC, "Maximum magnitude of position lag in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1121,7 +1121,7 @@ record(ai, "TST:MOTION:SLITY:AxisPar:PosLagVal_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisPar:PosLagTime_RBV") {
+record(ai, "TST:MOTION:SLITY:PosLagTime_RBV") {
   # Maximum allowable duration outside of maximum position lag value in seconds.
   field(DESC, "Maximum allowable du...value in seconds.")
   field(SCAN, "I/O Intr")
@@ -1135,7 +1135,7 @@ record(ai, "TST:MOTION:SLITY:AxisPar:PosLagTime_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisPar:MaxDecel_RBV") {
+record(ai, "TST:MOTION:SLITY:MaxDecel_RBV") {
   # Maximum rate of decrease in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of decr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -1149,7 +1149,7 @@ record(ai, "TST:MOTION:SLITY:AxisPar:MaxDecel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisPar:EncOffset_RBV") {
+record(ai, "TST:MOTION:SLITY:EncOffset_RBV") {
   field(DESC, "Encoder offset in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1162,7 +1162,7 @@ record(ai, "TST:MOTION:SLITY:AxisPar:EncOffset_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisPar:EncScaling_RBV") {
+record(ai, "TST:MOTION:SLITY:EncScaling_RBV") {
   # Encoder scaling numerator / denominator in EU/COUNT.
   field(DESC, "Encoder scaling nume...ator in EU/COUNT.")
   field(SCAN, "I/O Intr")
@@ -1176,7 +1176,7 @@ record(ai, "TST:MOTION:SLITY:AxisPar:EncScaling_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisPar:SLimMax_RBV") {
+record(ai, "TST:MOTION:SLITY:SLimMax_RBV") {
   # Maximum commandable position of the axis in EU.
   field(DESC, "Maximum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -1190,7 +1190,7 @@ record(ai, "TST:MOTION:SLITY:AxisPar:SLimMax_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisPar:SLimMin_RBV") {
+record(ai, "TST:MOTION:SLITY:SLimMin_RBV") {
   # Minimum commandable position of the axis in EU.
   field(DESC, "Minimum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -1204,7 +1204,7 @@ record(ai, "TST:MOTION:SLITY:AxisPar:SLimMin_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisPar:MaxVel_RBV") {
+record(ai, "TST:MOTION:SLITY:MaxVel_RBV") {
   # Maximum commandable speed of the axis in EU/s.
   field(DESC, "Maximum commandable ...the axis in EU/s.")
   field(SCAN, "I/O Intr")
@@ -1514,13 +1514,13 @@ record(longout, "TST:MOTION:SLITY:nCommand") {
   info(archive, "VAL")
 }
 
-record(bi, "TST:MOTION:SLITY:AxisStatus:bBusy_RBV") {
-  field(DESC, "TRUE if in the middle of a command")
+record(bi, "TST:MOTION:SLITY:bBusy_RBV") {
+  field(DESC, "TRUE move request is busy")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitY.stMotionStatus.bBusy?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitY.stMotionStatus.bBusy?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -1528,7 +1528,7 @@ record(bi, "TST:MOTION:SLITY:AxisStatus:bBusy_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITY:AxisStatus:bDone_RBV") {
+record(bi, "TST:MOTION:SLITY:bDone_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1542,13 +1542,13 @@ record(bi, "TST:MOTION:SLITY:AxisStatus:bDone_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITY:AxisStatus:bEnabled_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITY:bEnabled_RBV") {
+  field(DESC, "")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitY.stMotionStatus.bEnabled?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitY.stMotionStatus.bEnabled?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -1556,13 +1556,13 @@ record(bi, "TST:MOTION:SLITY:AxisStatus:bEnabled_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITY:AxisStatus:bError_RBV") {
+record(bi, "TST:MOTION:SLITY:bError_RBV") {
   field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitY.stMotionStatus.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitY.stMotionStatus.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -1570,8 +1570,8 @@ record(bi, "TST:MOTION:SLITY:AxisStatus:bError_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITY:AxisStatus:bHomeSensor_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITY:bHomeSensor_RBV") {
+  field(DESC, "Home sensor")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -1584,14 +1584,14 @@ record(bi, "TST:MOTION:SLITY:AxisStatus:bHomeSensor_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITY:AxisStatus:bHomed_RBV") {
+record(bi, "TST:MOTION:SLITY:bHomed_RBV") {
   # TRUE if the motor has been homed, or does not need to be homed
   field(DESC, "TRUE if the motor ha... need to be homed")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitY.stMotionStatus.bHomed?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitY.stMotionStatus.bHomed?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -1599,8 +1599,8 @@ record(bi, "TST:MOTION:SLITY:AxisStatus:bHomed_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITY:AxisStatus:bLimitBwd_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITY:bLimitBwd_RBV") {
+  field(DESC, "Backward limit enable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -1613,8 +1613,8 @@ record(bi, "TST:MOTION:SLITY:AxisStatus:bLimitBwd_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITY:AxisStatus:bLimitFwd_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITY:bLimitFwd_RBV") {
+  field(DESC, "Forward limit enable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -1627,7 +1627,7 @@ record(bi, "TST:MOTION:SLITY:AxisStatus:bLimitFwd_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITY:AxisStatus:bWarning_RBV") {
+record(bi, "TST:MOTION:SLITY:bWarning_RBV") {
   field(DESC, "Interlocks Warning")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1641,34 +1641,34 @@ record(bi, "TST:MOTION:SLITY:AxisStatus:bWarning_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisStatus:fActDiff_RBV") {
-  field(DESC, "Error code if nonzero")
+record(ai, "TST:MOTION:SLITY:fActDiff_RBV") {
+  field(DESC, "Actual position diff")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitY.stMotionStatus.fActDiff?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitY.stMotionStatus.fActDiff?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisStatus:fActPosition_RBV") {
-  field(DESC, "Error code if nonzero")
+record(ai, "TST:MOTION:SLITY:fActPosition_RBV") {
+  field(DESC, "Actual position")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitY.stMotionStatus.fActPosition?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitY.stMotionStatus.fActPosition?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisStatus:fActVelocity_RBV") {
-  field(DESC, "Error code if nonzero")
+record(ai, "TST:MOTION:SLITY:fActVelocity_RBV") {
+  field(DESC, "Actual velocity")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -1680,7 +1680,7 @@ record(ai, "TST:MOTION:SLITY:AxisStatus:fActVelocity_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITY:AxisStatus:fOverride_RBV") {
+record(ai, "TST:MOTION:SLITY:fOverride_RBV") {
   field(DESC, "Used internally to set power override")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1693,19 +1693,19 @@ record(ai, "TST:MOTION:SLITY:AxisStatus:fOverride_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITY:AxisStatus:nErrorId_RBV") {
+record(longin, "TST:MOTION:SLITY:nErrorId_RBV") {
   field(DESC, "Error code if nonzero")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitY.stMotionStatus.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitY.stMotionStatus.nErrorId?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITY:AxisStatus:nMotionAxisID_RBV") {
+record(longin, "TST:MOTION:SLITY:nMotionAxisID_RBV") {
   # Unique ID assigned to each axis in the NC
   field(DESC, "Unique ID assigned t...ch axis in the NC")
   field(SCAN, "I/O Intr")
@@ -1718,13 +1718,13 @@ record(longin, "TST:MOTION:SLITY:AxisStatus:nMotionAxisID_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "TST:MOTION:SLITY:AxisStatus:sErrorMessage_RBV") {
+record(waveform, "TST:MOTION:SLITY:sErrorMessage_RBV") {
   field(DESC, "Message to identify the error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitY.stMotionStatus.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitY.stMotionStatus.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")
@@ -1773,7 +1773,7 @@ record(bi, "TST:MOTION:SLITZ:bBacklashStatus_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:fBacklashComp_RBV") {
+record(ai, "TST:MOTION:SLITZ:fBacklash_RBV") {
   field(DESC, "Backlash compensation")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1786,7 +1786,7 @@ record(ai, "TST:MOTION:SLITZ:fBacklashComp_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ao, "TST:MOTION:SLITZ:fBacklashComp") {
+record(ao, "TST:MOTION:SLITZ:fBacklash") {
   field(DESC, "Backlash compensation")
   field(DTYP, "asynFloat64")
   field(UDFS, "0")
@@ -1885,7 +1885,7 @@ record(bo, "TST:MOTION:SLITZ:bUserEnable") {
   info(archive, "VAL")
 }
 
-record(longin, "TST:MOTION:SLITZ:AxisPar:PosLagEn_RBV") {
+record(longin, "TST:MOTION:SLITZ:PosLagEn_RBV") {
   # TRUE if position lag monitor (also known as stall monitor) is enabled.
   field(DESC, "TRUE if position lag...itor) is enabled.")
   field(SCAN, "I/O Intr")
@@ -1898,7 +1898,7 @@ record(longin, "TST:MOTION:SLITZ:AxisPar:PosLagEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITZ:AxisPar:SLimMaxEn_RBV") {
+record(longin, "TST:MOTION:SLITZ:SLimMaxEn_RBV") {
   # TRUE if controller static maximum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -1911,7 +1911,7 @@ record(longin, "TST:MOTION:SLITZ:AxisPar:SLimMaxEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITZ:AxisPar:SLimMinEn_RBV") {
+record(longin, "TST:MOTION:SLITZ:SLimMinEn_RBV") {
   # TRUE if controller static minimum limit is enabled.
   field(DESC, "TRUE if controller s...limit is enabled.")
   field(SCAN, "I/O Intr")
@@ -1924,7 +1924,7 @@ record(longin, "TST:MOTION:SLITZ:AxisPar:SLimMinEn_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisPar:MaxAccel_RBV") {
+record(ai, "TST:MOTION:SLITZ:MaxAccel_RBV") {
   # Maximum rate of increase in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of incr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -1938,7 +1938,7 @@ record(ai, "TST:MOTION:SLITZ:AxisPar:MaxAccel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisPar:PosLagVal_RBV") {
+record(ai, "TST:MOTION:SLITZ:PosLagVal_RBV") {
   field(DESC, "Maximum magnitude of position lag in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1951,7 +1951,7 @@ record(ai, "TST:MOTION:SLITZ:AxisPar:PosLagVal_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisPar:PosLagTime_RBV") {
+record(ai, "TST:MOTION:SLITZ:PosLagTime_RBV") {
   # Maximum allowable duration outside of maximum position lag value in seconds.
   field(DESC, "Maximum allowable du...value in seconds.")
   field(SCAN, "I/O Intr")
@@ -1965,7 +1965,7 @@ record(ai, "TST:MOTION:SLITZ:AxisPar:PosLagTime_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisPar:MaxDecel_RBV") {
+record(ai, "TST:MOTION:SLITZ:MaxDecel_RBV") {
   # Maximum rate of decrease in speed of the axis in EU/s^2.
   field(DESC, "Maximum rate of decr...e axis in EU/s^2.")
   field(SCAN, "I/O Intr")
@@ -1979,7 +1979,7 @@ record(ai, "TST:MOTION:SLITZ:AxisPar:MaxDecel_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisPar:EncOffset_RBV") {
+record(ai, "TST:MOTION:SLITZ:EncOffset_RBV") {
   field(DESC, "Encoder offset in EU.")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -1992,7 +1992,7 @@ record(ai, "TST:MOTION:SLITZ:AxisPar:EncOffset_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisPar:EncScaling_RBV") {
+record(ai, "TST:MOTION:SLITZ:EncScaling_RBV") {
   # Encoder scaling numerator / denominator in EU/COUNT.
   field(DESC, "Encoder scaling nume...ator in EU/COUNT.")
   field(SCAN, "I/O Intr")
@@ -2006,7 +2006,7 @@ record(ai, "TST:MOTION:SLITZ:AxisPar:EncScaling_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisPar:SLimMax_RBV") {
+record(ai, "TST:MOTION:SLITZ:SLimMax_RBV") {
   # Maximum commandable position of the axis in EU.
   field(DESC, "Maximum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -2020,7 +2020,7 @@ record(ai, "TST:MOTION:SLITZ:AxisPar:SLimMax_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisPar:SLimMin_RBV") {
+record(ai, "TST:MOTION:SLITZ:SLimMin_RBV") {
   # Minimum commandable position of the axis in EU.
   field(DESC, "Minimum commandable ...f the axis in EU.")
   field(SCAN, "I/O Intr")
@@ -2034,7 +2034,7 @@ record(ai, "TST:MOTION:SLITZ:AxisPar:SLimMin_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisPar:MaxVel_RBV") {
+record(ai, "TST:MOTION:SLITZ:MaxVel_RBV") {
   # Maximum commandable speed of the axis in EU/s.
   field(DESC, "Maximum commandable ...the axis in EU/s.")
   field(SCAN, "I/O Intr")
@@ -2344,13 +2344,13 @@ record(longout, "TST:MOTION:SLITZ:nCommand") {
   info(archive, "VAL")
 }
 
-record(bi, "TST:MOTION:SLITZ:AxisStatus:bBusy_RBV") {
-  field(DESC, "TRUE if in the middle of a command")
+record(bi, "TST:MOTION:SLITZ:bBusy_RBV") {
+  field(DESC, "TRUE move request is busy")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitZ.stMotionStatus.bBusy?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitZ.stMotionStatus.bBusy?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -2358,7 +2358,7 @@ record(bi, "TST:MOTION:SLITZ:AxisStatus:bBusy_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITZ:AxisStatus:bDone_RBV") {
+record(bi, "TST:MOTION:SLITZ:bDone_RBV") {
   field(DESC, "TRUE if we")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -2372,13 +2372,13 @@ record(bi, "TST:MOTION:SLITZ:AxisStatus:bDone_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITZ:AxisStatus:bEnabled_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITZ:bEnabled_RBV") {
+  field(DESC, "")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitZ.stMotionStatus.bEnabled?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitZ.stMotionStatus.bEnabled?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -2386,13 +2386,13 @@ record(bi, "TST:MOTION:SLITZ:AxisStatus:bEnabled_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITZ:AxisStatus:bError_RBV") {
+record(bi, "TST:MOTION:SLITZ:bError_RBV") {
   field(DESC, "TRUE if we are in an error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitZ.stMotionStatus.bError?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitZ.stMotionStatus.bError?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -2400,8 +2400,8 @@ record(bi, "TST:MOTION:SLITZ:AxisStatus:bError_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITZ:AxisStatus:bHomeSensor_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITZ:bHomeSensor_RBV") {
+  field(DESC, "Home sensor")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -2414,14 +2414,14 @@ record(bi, "TST:MOTION:SLITZ:AxisStatus:bHomeSensor_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITZ:AxisStatus:bHomed_RBV") {
+record(bi, "TST:MOTION:SLITZ:bHomed_RBV") {
   # TRUE if the motor has been homed, or does not need to be homed
   field(DESC, "TRUE if the motor ha... need to be homed")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitZ.stMotionStatus.bHomed?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitZ.stMotionStatus.bHomed?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
   info(autosaveFields_pass0, "DESC DISS OSV SIMS UDFS ZSV")
@@ -2429,8 +2429,8 @@ record(bi, "TST:MOTION:SLITZ:AxisStatus:bHomed_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITZ:AxisStatus:bLimitBwd_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITZ:bLimitBwd_RBV") {
+  field(DESC, "Backward limit enable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -2443,8 +2443,8 @@ record(bi, "TST:MOTION:SLITZ:AxisStatus:bLimitBwd_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITZ:AxisStatus:bLimitFwd_RBV") {
-  field(DESC, "Error code if nonzero")
+record(bi, "TST:MOTION:SLITZ:bLimitFwd_RBV") {
+  field(DESC, "Forward limit enable")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -2457,7 +2457,7 @@ record(bi, "TST:MOTION:SLITZ:AxisStatus:bLimitFwd_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(bi, "TST:MOTION:SLITZ:AxisStatus:bWarning_RBV") {
+record(bi, "TST:MOTION:SLITZ:bWarning_RBV") {
   field(DESC, "Interlocks Warning")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -2471,34 +2471,34 @@ record(bi, "TST:MOTION:SLITZ:AxisStatus:bWarning_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisStatus:fActDiff_RBV") {
-  field(DESC, "Error code if nonzero")
+record(ai, "TST:MOTION:SLITZ:fActDiff_RBV") {
+  field(DESC, "Actual position diff")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitZ.stMotionStatus.fActDiff?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitZ.stMotionStatus.fActDiff?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisStatus:fActPosition_RBV") {
-  field(DESC, "Error code if nonzero")
+record(ai, "TST:MOTION:SLITZ:fActPosition_RBV") {
+  field(DESC, "Actual position")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/MAIN.slitZ.stMotionStatus.fActPosition?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitZ.stMotionStatus.fActPosition?")
   field(PREC, "3")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV PREC SIMS UDFS")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisStatus:fActVelocity_RBV") {
-  field(DESC, "Error code if nonzero")
+record(ai, "TST:MOTION:SLITZ:fActVelocity_RBV") {
+  field(DESC, "Actual velocity")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -2510,7 +2510,7 @@ record(ai, "TST:MOTION:SLITZ:AxisStatus:fActVelocity_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(ai, "TST:MOTION:SLITZ:AxisStatus:fOverride_RBV") {
+record(ai, "TST:MOTION:SLITZ:fOverride_RBV") {
   field(DESC, "Used internally to set power override")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -2523,19 +2523,19 @@ record(ai, "TST:MOTION:SLITZ:AxisStatus:fOverride_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITZ:AxisStatus:nErrorId_RBV") {
+record(longin, "TST:MOTION:SLITZ:nErrorId_RBV") {
   field(DESC, "Error code if nonzero")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitZ.stMotionStatus.nErrorId?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitZ.stMotionStatus.nErrorId?")
   info(autosaveFields_pass0, "DESC DISS HHSV HIGH HIHI HSV LLSV LOLO LOW LSV SIMS UDFS")
   info(archive, "VAL")
   field(ASG, "NO_WRITE")
 }
 
-record(longin, "TST:MOTION:SLITZ:AxisStatus:nMotionAxisID_RBV") {
+record(longin, "TST:MOTION:SLITZ:nMotionAxisID_RBV") {
   # Unique ID assigned to each axis in the NC
   field(DESC, "Unique ID assigned t...ch axis in the NC")
   field(SCAN, "I/O Intr")
@@ -2548,13 +2548,13 @@ record(longin, "TST:MOTION:SLITZ:AxisStatus:nMotionAxisID_RBV") {
   field(ASG, "NO_WRITE")
 }
 
-record(waveform, "TST:MOTION:SLITZ:AxisStatus:sErrorMessage_RBV") {
+record(waveform, "TST:MOTION:SLITZ:sErrorMessage_RBV") {
   field(DESC, "Message to identify the error state")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
   field(DTYP, "asynInt8ArrayIn")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=10/MAIN.slitZ.stMotionStatus.sErrorMessage?")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/TS_MS=500/MAIN.slitZ.stMotionStatus.sErrorMessage?")
   field(FTVL, "CHAR")
   field(NELM, "80")
   field(MPST, "On Change")

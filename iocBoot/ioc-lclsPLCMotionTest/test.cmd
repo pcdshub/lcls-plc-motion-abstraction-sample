@@ -84,7 +84,7 @@ adsAsynPortDriverConfigure("$(ASYN_PORT)", "$(IPADDR)", "$(AMSID)", "$(AMS_PORT)
 #define ASYN_TRACE_FLOW      0x0010
 #define ASYN_TRACE_WARNING   0x0020
 #define ASYN_TRACE_INFO      0x0040
-asynSetTraceMask("$(ASYN_PORT)", -1, 0x41|ASYN_TRACE_ERROR|ASYN_TRACE_WARNING)
+asynSetTraceMask("$(ASYN_PORT)", -1, 0x41)
 
 #define ASYN_TRACEIO_NODATA 0x0000
 #define ASYN_TRACEIO_ASCII  0x0001

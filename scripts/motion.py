@@ -13,7 +13,7 @@ def get_args():
                         help="Number of normal moves to batch test (default: 5)")
     parser.add_argument("--offset", type=float, default=15.0,
                         help="User-specified magnitude (float) for all normal moves (default: 15.0). Sign alternates automatically.")
-    parser.add_argument("--num-backlash", type=int, default=0,
+    parser.add_argument("--num-backlash", type=int, default=5,
                         help="Number of backlash compensation tests (default: 2)")
     parser.add_argument("--num-halt", type=int, default=0,
                         help="Number of halt-in-motion tests (default: 1)")
@@ -64,7 +64,7 @@ PVNAMES = {
     "bHomed":           MOTOR + "bHomed_RBV",
     "sErrorMessage":    MOTOR + "sErrorMessage_RBV",
     "bBacklashStatus":  MOTOR + "bBacklashStatus_RBV",
-    "fMeasuredBacklashComp": MOTOR + "fMeasuredBacklashComp_RBV",
+    "fCurrentBacklash": MOTOR + "fCurrentBacklash_RBV",
 }
 PVs = {key: PV(pvname) for key, pvname in PVNAMES.items()}
 
@@ -119,7 +119,7 @@ def wait_move_and_check(target, pos_tol=0.03, timeout=10.0, expect_comp=None, co
     assert_true(abs(pos - target) < pos_tol, f"Final position {pos} matches target {target}")
 
     if expect_comp is not None:
-        fmeas = PVs["fMeasuredBacklashComp"].get(timeout=1.0)
+        fmeas = PVs["fCurrentBacklash"].get(timeout=1.0)
         vprint(f"[INFO] Measured compensation: {fmeas}, expected {expect_comp}")
         if abs(expect_comp) < 0.001:
             assert_true(abs(fmeas) < comp_tol, f"Measured compensation {fmeas} should be ~0")
@@ -216,15 +216,19 @@ def batch_move_tests(num_moves=5, num_backlash=2, num_halt=1, num_reset=1, num_h
 
     if num_backlash > 0:
         print(f"  [BATCH] {num_backlash} backlash compensation moves")
-        for _ in range(num_backlash):
-            direction = random.choice([-1, 1])
-            offset = direction * random.uniform(10.0, 20.0)
+        for i in range(num_backlash):
+            BL = random.choice([1.7, -1.7])
             PVs["bBacklashEnable"].put(1, timeout=1.0)
-            BL = random.choice([1.7, -0.7])
             PVs["fBacklash"].put(BL, timeout=1.0)
             time.sleep(0.3)
-            print(f"   [backlash] offset={offset:.2f}, BL={BL}")
-            expect_comp = abs(BL) if direction < 0 else 0.0
+            direction = random.choice([-1, 1])
+            offset = direction * random.uniform(10.0, 20.0)
+            # Compensate if move opposes BL sign:
+            compensated = (BL > 0 and direction < 0) or (BL < 0 and direction > 0)
+            expect_comp = abs(BL) if compensated else 0.0
+            print(
+                f"   [backlash] move #{i + 1}: offset={offset:.2f}, BL={BL}, expect_comp={expect_comp}"
+            )
             move_abs_offset(offset, min_time=avg_motion_time, expect_comp=expect_comp)
 
     if num_halt > 0:

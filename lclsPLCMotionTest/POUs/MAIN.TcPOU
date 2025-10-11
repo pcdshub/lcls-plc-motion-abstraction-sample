@@ -19,7 +19,7 @@ VAR
    	slitY : FB_MotionStageNC(	sName := 'slitY',
                                         AxisRef := GVL_Axes.Axes[2],
                                         iPersistentDataStorage := fbPersistentDataStorage
-                                    ) ;
+                                    ) := (EnableMode:=E_StageEnableMode.ALWAYS);
 	{attribute 'pytmc' := '
 		axis-link: GVL_Axes.Axes[3]
 		pv: TST:MOTION:SLITZ

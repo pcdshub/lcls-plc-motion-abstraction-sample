@@ -9,7 +9,7 @@ TST:MOTION:SLITX:bBacklashEnable.VAL	1	scan
 TST:MOTION:SLITX:bBacklashStatus_RBV.VAL	1	scan
 TST:MOTION:SLITX:fBacklash_RBV.VAL	1	scan
 TST:MOTION:SLITX:fBacklash.VAL	1	scan
-TST:MOTION:SLITX:fMeasuredBacklashComp_RBV.VAL	1	scan
+TST:MOTION:SLITX:fCurrentBacklash_RBV.VAL	1	scan
 TST:MOTION:SLITX:fRampVelo_RBV.VAL	1	scan
 TST:MOTION:SLITX:fRampVelo.VAL	1	scan
 TST:MOTION:SLITX:nEncoderCount_RBV.VAL	1	scan
@@ -73,7 +73,7 @@ TST:MOTION:SLITY:bBacklashEnable.VAL	1	scan
 TST:MOTION:SLITY:bBacklashStatus_RBV.VAL	1	scan
 TST:MOTION:SLITY:fBacklash_RBV.VAL	1	scan
 TST:MOTION:SLITY:fBacklash.VAL	1	scan
-TST:MOTION:SLITY:fMeasuredBacklashComp_RBV.VAL	1	scan
+TST:MOTION:SLITY:fCurrentBacklash_RBV.VAL	1	scan
 TST:MOTION:SLITY:fRampVelo_RBV.VAL	1	scan
 TST:MOTION:SLITY:fRampVelo.VAL	1	scan
 TST:MOTION:SLITY:nEncoderCount_RBV.VAL	1	scan
@@ -137,7 +137,7 @@ TST:MOTION:SLITZ:bBacklashEnable.VAL	1	scan
 TST:MOTION:SLITZ:bBacklashStatus_RBV.VAL	1	scan
 TST:MOTION:SLITZ:fBacklash_RBV.VAL	1	scan
 TST:MOTION:SLITZ:fBacklash.VAL	1	scan
-TST:MOTION:SLITZ:fMeasuredBacklashComp_RBV.VAL	1	scan
+TST:MOTION:SLITZ:fCurrentBacklash_RBV.VAL	1	scan
 TST:MOTION:SLITZ:fRampVelo_RBV.VAL	1	scan
 TST:MOTION:SLITZ:fRampVelo.VAL	1	scan
 TST:MOTION:SLITZ:nEncoderCount_RBV.VAL	1	scan

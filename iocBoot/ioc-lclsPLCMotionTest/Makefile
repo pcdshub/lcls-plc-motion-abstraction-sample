@@ -1,4 +1,5 @@
-IOC_TOP=/opt/epics/iocs/ads-ioc/R1.0.0
+#IOC_TOP=/opt/epics/iocs/ads-ioc/R1.0.0
+IOC_TOP=/cds/home/y/ysmandza/modules/ads-ioc/R1.0.0
 IOC_INSTANCE_PATH := $(shell pwd)
 
 # Set PRODUCTION_IOC to 1 to move from a testing to a production IOC:

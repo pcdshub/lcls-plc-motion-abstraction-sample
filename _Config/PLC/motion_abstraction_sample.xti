@@ -982,9 +982,9 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Project GUID="{E31ADAA4-9B77-495F-982E-6D67EFCA2359}" Name="lclsPLCMotionTest" PrjFilePath="..\..\lclsPLCMotionTest\lclsPLCMotionTest.plcproj" TmcFilePath="..\..\lclsPLCMotionTest\lclsPLCMotionTest.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcHash="{3204D082-7290-0EE4-9271-C4C84953ED6E}" TmcPath="lclsPLCMotionTest\lclsPLCMotionTest.tmc">
-			<Name>lclsPLCMotionTest Instance</Name>
+	<Project GUID="{E31ADAA4-9B77-495F-982E-6D67EFCA2359}" Name="motion_abstraction_sample" PrjFilePath="..\..\motion_abstraction_sample\motion_abstraction_sample.plcproj" TmcFilePath="..\..\motion_abstraction_sample\motion_abstraction_sample.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcHash="{EA2396AC-FC05-5FEB-56E6-4FE417D754CE}" TmcPath="lclsPLCMotionTest\lclsPLCMotionTest.tmc">
+			<Name>motion_abstraction_sample Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Vars VarGrpType="2" AreaNo="1">
 				<Name>PlcTask Outputs</Name>
@@ -1221,7 +1221,7 @@ External Setpoint Generation:
 		</Instance>
 	</Project>
 	<Mappings>
-		<OwnerA Name="lclsPLCMotionTest Instance">
+		<OwnerA Name="motion_abstraction_sample Instance">
 			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
 				<Link VarA="PlcTask Inputs^GVL_Axes.Axes[1].NcToPlc" VarB="Outputs^ToPlc"/>
 				<Link VarA="PlcTask Outputs^GVL_Axes.Axes[1].PlcToNc" VarB="Inputs^FromPlc"/>

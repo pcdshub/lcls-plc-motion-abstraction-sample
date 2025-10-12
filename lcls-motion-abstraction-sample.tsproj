@@ -91,7 +91,7 @@
 			<NC File="NC.xti"/>
 		</Motion>
 		<Plc>
-			<Project File="lclsPLCMotionTest.xti"/>
+			<Project File="motion_abstraction_sample.xti"/>
 		</Plc>
 		<Io/>
 	</Project>

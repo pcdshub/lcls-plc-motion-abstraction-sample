@@ -1,0 +1,2 @@
+epicsEnvSet("IOC_TOP", "/c/Users/ysmandza/Documents/lcls/01-TwinCAT PLC Samples/lcsl-motion-samples/iocBoot/ioc-motion-abstraction-sample")
+epicsEnvSet("IOC_DATA", "/cds/data/iocData")

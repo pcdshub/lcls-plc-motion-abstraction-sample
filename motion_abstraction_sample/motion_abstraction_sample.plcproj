@@ -8,7 +8,7 @@
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>false</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>lclsPLCMotionTest</Name>
+    <Name>motion_abstraction_sample</Name>
     <ProgramVersion>3.1.4026.17</ProgramVersion>
     <Application>{a4c645bf-b670-4c70-a61d-d8e415a1f08d}</Application>
     <TypeSystem>{98f8ab73-a3e7-4bbc-890d-430050800338}</TypeSystem>
@@ -81,7 +81,7 @@
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
-    <None Include="lclsPLCMotionTest.tmc">
+    <None Include="motion_abstraction_sample.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>

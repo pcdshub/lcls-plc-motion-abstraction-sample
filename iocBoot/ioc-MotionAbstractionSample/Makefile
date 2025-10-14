@@ -1,4 +1,4 @@
-IOC_TOP=/reg/g/pcds/epics/ioc/common/ads-ioc/1.0.0
+IOC_TOP=/reg/g/pcds/epics/ioc/common/ads-ioc/R0.8.0
 IOC_INSTANCE_PATH := $(shell pwd)
 
 # Set PRODUCTION_IOC to 1 to move from a testing to a production IOC:
@@ -6,7 +6,7 @@ PRODUCTION_IOC := 0
 
 PROJECT_NAME := lcls-motion-abstraction-sample
 PROJECT_PATH := ../../lcls-motion-abstraction-sample.tsproj
-PLC := motion_abstraction_sample
+PLC := MotionAbstractionSample
 
 PYTMC_OPTS :=
 PREFIX := PLC:$(PLC)

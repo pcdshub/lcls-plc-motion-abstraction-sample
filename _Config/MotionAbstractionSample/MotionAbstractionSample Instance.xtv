@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.17" ClassName="CNestedPlcProjDef">
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.17" ClassName="CTComPlcObjDef">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{CBC83B73-B816-4597-A9E5-2B03263CA131}" Namespace="MC" TcBaseType="true" HideType="true" IecDeclaration="DWORD;">NCTOPLC_AXIS_REF_STATE</Name>
@@ -982,262 +982,224 @@ External Setpoint Generation:
 			</Relations>
 		</DataType>
 	</DataTypes>
-	<Project GUID="{E31ADAA4-9B77-495F-982E-6D67EFCA2359}" Name="motion_abstraction_sample" PrjFilePath="..\..\motion_abstraction_sample\motion_abstraction_sample.plcproj" TmcFilePath="..\..\motion_abstraction_sample\motion_abstraction_sample.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" TmcHash="{EA2396AC-FC05-5FEB-56E6-4FE417D754CE}" TmcPath="lclsPLCMotionTest\lclsPLCMotionTest.tmc">
-			<Name>motion_abstraction_sample Instance</Name>
-			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-			<Vars VarGrpType="2" AreaNo="1">
-				<Name>PlcTask Outputs</Name>
-				<Var>
-					<Name>MAIN.slitX.fbBrake.bBrakeRelease</Name>
-					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitY.fbBrake.bBrakeRelease</Name>
-					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitZ.fbBrake.bBrakeRelease</Name>
-					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.dummy.fbBrake.bBrakeRelease</Name>
-					<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Axes.Axes[1].PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Axes.Axes[2].PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Axes.Axes[3].PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Axes.Axes[4].PlcToNc</Name>
-					<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-				</Var>
-			</Vars>
-			<Vars VarGrpType="1">
-				<Name>PlcTask Inputs</Name>
-				<Var>
-					<Name>MAIN.slitX.fbMotionInterlocksCommon.bHardwareEnable</Name>
-					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitX.fbLimSwStatus.bLimitForwardEnable</Name>
-					<Comment><![CDATA[ Hardware 
+	<Instance TmcHash="{B6DB6DDD-CD6B-1FEA-5273-7F1DEC6D13FC}">
+		<Vars VarGrpType="1">
+			<Name>PlcTask Inputs</Name>
+			<Var>
+				<Name>MAIN.slitX.fbMotionInterlocksCommon.bHardwareEnable</Name>
+				<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitX.fbLimSwStatus.bLimitForwardEnable</Name>
+				<Comment><![CDATA[ Hardware 
  NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitX.fbLimSwStatus.bLimitBackwardEnable</Name>
-					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitX.fbLimSwStatus.bLimitHome</Name>
-					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitX.fbEncoderScaling.nRawEncoderULINT</Name>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitX.fbEncoderScaling.nRawEncoderUINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitX.fbEncoderScaling.nRawEncoderINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitX.fbEncoderScaling.nRawEncoderDINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitY.fbMotionInterlocksCommon.bHardwareEnable</Name>
-					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitY.fbLimSwStatus.bLimitForwardEnable</Name>
-					<Comment><![CDATA[ Hardware 
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitX.fbLimSwStatus.bLimitBackwardEnable</Name>
+				<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitX.fbLimSwStatus.bLimitHome</Name>
+				<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitX.fbEncoderScaling.nRawEncoderULINT</Name>
+				<Type>ULINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitX.fbEncoderScaling.nRawEncoderUINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitX.fbEncoderScaling.nRawEncoderINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitX.fbEncoderScaling.nRawEncoderDINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitY.fbMotionInterlocksCommon.bHardwareEnable</Name>
+				<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitY.fbLimSwStatus.bLimitForwardEnable</Name>
+				<Comment><![CDATA[ Hardware 
  NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitY.fbLimSwStatus.bLimitBackwardEnable</Name>
-					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitY.fbLimSwStatus.bLimitHome</Name>
-					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitY.fbEncoderScaling.nRawEncoderULINT</Name>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitY.fbEncoderScaling.nRawEncoderUINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitY.fbEncoderScaling.nRawEncoderINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitY.fbEncoderScaling.nRawEncoderDINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitZ.fbMotionInterlocksCommon.bHardwareEnable</Name>
-					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitZ.fbLimSwStatus.bLimitForwardEnable</Name>
-					<Comment><![CDATA[ Hardware 
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitY.fbLimSwStatus.bLimitBackwardEnable</Name>
+				<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitY.fbLimSwStatus.bLimitHome</Name>
+				<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitY.fbEncoderScaling.nRawEncoderULINT</Name>
+				<Type>ULINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitY.fbEncoderScaling.nRawEncoderUINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitY.fbEncoderScaling.nRawEncoderINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitY.fbEncoderScaling.nRawEncoderDINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitZ.fbMotionInterlocksCommon.bHardwareEnable</Name>
+				<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitZ.fbLimSwStatus.bLimitForwardEnable</Name>
+				<Comment><![CDATA[ Hardware 
  NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitZ.fbLimSwStatus.bLimitBackwardEnable</Name>
-					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitZ.fbLimSwStatus.bLimitHome</Name>
-					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitZ.fbEncoderScaling.nRawEncoderULINT</Name>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitZ.fbEncoderScaling.nRawEncoderUINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitZ.fbEncoderScaling.nRawEncoderINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.slitZ.fbEncoderScaling.nRawEncoderDINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.dummy.fbMotionInterlocksCommon.bHardwareEnable</Name>
-					<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.dummy.fbLimSwStatus.bLimitForwardEnable</Name>
-					<Comment><![CDATA[ Hardware 
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitZ.fbLimSwStatus.bLimitBackwardEnable</Name>
+				<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitZ.fbLimSwStatus.bLimitHome</Name>
+				<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitZ.fbEncoderScaling.nRawEncoderULINT</Name>
+				<Type>ULINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitZ.fbEncoderScaling.nRawEncoderUINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitZ.fbEncoderScaling.nRawEncoderINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitZ.fbEncoderScaling.nRawEncoderDINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.dummy.fbMotionInterlocksCommon.bHardwareEnable</Name>
+				<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.dummy.fbLimSwStatus.bLimitForwardEnable</Name>
+				<Comment><![CDATA[ Hardware 
  NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.dummy.fbLimSwStatus.bLimitBackwardEnable</Name>
-					<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.dummy.fbLimSwStatus.bLimitHome</Name>
-					<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-					<Type>BOOL</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.dummy.fbEncoderScaling.nRawEncoderULINT</Name>
-					<Type>ULINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.dummy.fbEncoderScaling.nRawEncoderUINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-					<Type>UINT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.dummy.fbEncoderScaling.nRawEncoderINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-					<Type>INT</Type>
-				</Var>
-				<Var>
-					<Name>MAIN.dummy.fbEncoderScaling.nRawEncoderDINT</Name>
-					<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
-					<Type>DINT</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Axes.Axes[1].NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Axes.Axes[2].NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Axes.Axes[3].NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-				<Var>
-					<Name>GVL_Axes.Axes[4].NcToPlc</Name>
-					<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-				</Var>
-			</Vars>
-			<Contexts>
-				<Context>
-					<Id>0</Id>
-					<Name>PlcTask</Name>
-					<ManualConfig>
-						<OTCID>#x02010050</OTCID>
-					</ManualConfig>
-					<Priority>20</Priority>
-					<CycleTime>10000000</CycleTime>
-				</Context>
-			</Contexts>
-			<TaskPouOids>
-				<TaskPouOid Prio="20" OTCID="#x08502001"/>
-			</TaskPouOids>
-		</Instance>
-	</Project>
-	<Mappings>
-		<OwnerA Name="motion_abstraction_sample Instance">
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 1">
-				<Link VarA="PlcTask Inputs^GVL_Axes.Axes[1].NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Axes.Axes[1].PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 2">
-				<Link VarA="PlcTask Inputs^GVL_Axes.Axes[2].NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Axes.Axes[2].PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 3">
-				<Link VarA="PlcTask Inputs^GVL_Axes.Axes[3].NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Axes.Axes[3].PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-			<OwnerB Name="TINC^NC-Task 1 SAF^Axes^Axis 4">
-				<Link VarA="PlcTask Inputs^GVL_Axes.Axes[4].NcToPlc" VarB="Outputs^ToPlc"/>
-				<Link VarA="PlcTask Outputs^GVL_Axes.Axes[4].PlcToNc" VarB="Inputs^FromPlc"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.dummy.fbLimSwStatus.bLimitBackwardEnable</Name>
+				<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.dummy.fbLimSwStatus.bLimitHome</Name>
+				<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.dummy.fbEncoderScaling.nRawEncoderULINT</Name>
+				<Type>ULINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.dummy.fbEncoderScaling.nRawEncoderUINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+				<Type>UINT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.dummy.fbEncoderScaling.nRawEncoderINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+				<Type>INT</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.dummy.fbEncoderScaling.nRawEncoderDINT</Name>
+				<Comment><![CDATA[ Raw encoder IO for INT (EL5072 LVDT)]]></Comment>
+				<Type>DINT</Type>
+			</Var>
+			<Var>
+				<Name>GVL_Axes.Axes[1].NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_Axes.Axes[2].NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_Axes.Axes[3].NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_Axes.Axes[4].NcToPlc</Name>
+				<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+			</Var>
+		</Vars>
+		<Vars VarGrpType="2" AreaNo="1">
+			<Name>PlcTask Outputs</Name>
+			<Var>
+				<Name>MAIN.slitX.fbBrake.bBrakeRelease</Name>
+				<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitY.fbBrake.bBrakeRelease</Name>
+				<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.slitZ.fbBrake.bBrakeRelease</Name>
+				<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>MAIN.dummy.fbBrake.bBrakeRelease</Name>
+				<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+				<Type>BOOL</Type>
+			</Var>
+			<Var>
+				<Name>GVL_Axes.Axes[1].PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_Axes.Axes[2].PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_Axes.Axes[3].PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+			<Var>
+				<Name>GVL_Axes.Axes[4].PlcToNc</Name>
+				<Type GUID="{96B75FEB-2D84-43BE-A3EC-D9A681F27D52}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+			</Var>
+		</Vars>
+	</Instance>
 </TcSmItem>

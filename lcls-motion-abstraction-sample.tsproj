@@ -78,15 +78,12 @@
 	</DataTypes>
 	<Project ProjectGUID="{8FC85561-A465-4EB1-B35A-29FB3B87DEE1}" TargetNetId="172.21.148.154.1.1" Target64Bit="true" ShowHideConfigurations="#x6">
 		<System>
-			<Settings MaxCpus="4">
+			<Settings MaxCpus="4" NonWinCpus="2">
 				<Cpu CpuId="3"/>
 			</Settings>
 			<Tasks>
 				<Task Id="5" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
-				</Task>
-				<Task Id="6" Priority="21" CycleTime="100000" AmsPort="351" AdtTasks="true">
-					<Name>PlcTask1</Name>
 				</Task>
 			</Tasks>
 		</System>
@@ -94,7 +91,7 @@
 			<NC File="NC.xti"/>
 		</Motion>
 		<Plc>
-			<Project File="MotionAbstractionSample.xti"/>
+			<Project File="motion_abstraction_sample.xti"/>
 		</Plc>
 	</Project>
 </TcSmProject>

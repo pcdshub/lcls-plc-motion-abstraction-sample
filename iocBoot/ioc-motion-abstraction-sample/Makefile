@@ -6,7 +6,7 @@ PRODUCTION_IOC := 0
 
 PROJECT_NAME := lcls-motion-abstraction-sample
 PROJECT_PATH := ../../lcls-motion-abstraction-sample.tsproj
-PLC := MotionAbstractionSample
+PLC := motion_abstraction_sample
 
 PYTMC_OPTS :=
 PREFIX := PLC:$(PLC)

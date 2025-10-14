@@ -2,7 +2,7 @@
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: lcls-motion-abstraction-sample.tsproj
-#        PLC name: MotionAbstractionSample (MotionAbstractionSample Instance)
+#        PLC name: motion_abstraction_sample (motion_abstraction_sample Instance)
 # Generated using: pytmc 2.18.2
 # Project version: unknown
 #    Project hash: unknown
@@ -14,9 +14,11 @@
 #
 # Libraries:
 #
+#   LCLS General: * (SLAC)
 #   LCLS_OOPMotion: * (SLAC)
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
-#   Tc2_Standard: * (Beckhoff Automation GmbH)
+#   Tc2_NC: * (Beckhoff Automation GmbH)
+#   Tc2_Standard: * -> 3.4.5.0 (Beckhoff Automation GmbH)
 #   Tc2_System: * (Beckhoff Automation GmbH)
 #   Tc3_Module: * (Beckhoff Automation GmbH)
 #
@@ -26,7 +28,7 @@
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
 epicsEnvSet("ENGINEER", "" )
-epicsEnvSet("LOCATION", "PLC:MotionAbstractionSample" )
+epicsEnvSet("LOCATION", "PLC:motion_abstraction_sample" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
 
@@ -75,37 +77,41 @@ adsAsynPortDriverConfigure("$(ASYN_PORT)", "$(IPADDR)", "$(AMSID)", "$(AMS_PORT)
 cd "$(ADS_IOC_TOP)/db"
 
 
-dbLoadRecords("iocSoft.db", "IOC=PLC:MotionAbstractionSample")
-dbLoadRecords("save_restoreStatus.db", "P=PLC:MotionAbstractionSample:")
+dbLoadRecords("iocSoft.db", "IOC=PLC:motion_abstraction_sample")
+dbLoadRecords("save_restoreStatus.db", "P=PLC:motion_abstraction_sample:")
 dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
 ## TwinCAT task, application, and project information databases ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:MotionAbstractionSample,IDX=2,TASK_PORT=351")
-dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:MotionAbstractionSample")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:motion_abstraction_sample,IDX=1,TASK_PORT=350")
+dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:motion_abstraction_sample")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:MotionAbstractionSample,PROJECT=lcls-motion-abstraction-sample.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.2,PLC_HOST=172.21.148.154")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:motion_abstraction_sample,PROJECT=lcls-motion-abstraction-sample.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.2,PLC_HOST=172.21.148.154")
 
+#   LCLS General: * (SLAC)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
 #   LCLS_OOPMotion: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:MotionAbstractionSample,DEPENDENCY=LCLS_OOPMotion,VERSION=*,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=LCLS_OOPMotion,VERSION=*,VENDOR=SLAC")
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:MotionAbstractionSample,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
-#   Tc2_Standard: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:MotionAbstractionSample,DEPENDENCY=Tc2_Standard,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_NC: * (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc2_NC,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   Tc2_Standard: * -> 3.4.5.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc2_Standard,VERSION=3.4.5.0,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_System: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:MotionAbstractionSample,DEPENDENCY=Tc2_System,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc2_System,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc3_Module: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:MotionAbstractionSample,DEPENDENCY=Tc3_Module,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc3_Module,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 
 cd "$(IOC_TOP)"
 
 ## PLC Project Database files ##
-dbLoadRecords("MotionAbstractionSample.db", "PORT=$(ASYN_PORT),PREFIX=PLC:MotionAbstractionSample:,IOCNAME=$(IOC),IOC=$(IOC)")
+dbLoadRecords("motion_abstraction_sample.db", "PORT=$(ASYN_PORT),PREFIX=PLC:motion_abstraction_sample:,IOCNAME=$(IOC),IOC=$(IOC)")
 
 # Total records: 198
 callbackSetQueueSize(2396)
 
 # Autosave and archive settings:
-save_restoreSet_status_prefix("PLC:MotionAbstractionSample:")
+save_restoreSet_status_prefix("PLC:motion_abstraction_sample:")
 save_restoreSet_IncompleteSetsOk(1)
 save_restoreSet_DatedBackupFiles(1)
 set_pass0_restoreFile("info_positions.sav")

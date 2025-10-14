@@ -1,2 +1,0 @@
-epicsEnvSet("IOC_TOP", "/c/Users/ysmandza/Documents/lcls/03-Devs/lcls-plc-motion-abstraction-sample/iocBoot/ioc-MotionAbstractionSample")
-epicsEnvSet("IOC_DATA", "/cds/data/iocData")

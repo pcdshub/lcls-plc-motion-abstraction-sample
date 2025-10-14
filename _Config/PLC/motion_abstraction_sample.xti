@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.17" ClassName="CNestedPlcProjDef">
+	<Project GUID="{E31ADAA4-9B77-495F-982E-6D67EFCA2359}" Name="motion_abstraction_sample" PrjFilePath="..\..\motion_abstraction_sample\motion_abstraction_sample.plcproj" TmcFilePath="..\..\motion_abstraction_sample\motion_abstraction_sample.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+		<Instance File="motion_abstraction_sample Instance.xti"/>
+	</Project>
+</TcSmItem>

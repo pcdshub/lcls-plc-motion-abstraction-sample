@@ -1,9 +1,9 @@
-#!c:/Repos/ads-ioc/R0.8.0///bin/rhel7-x86_64/adsIoc
+#!/cds/home/y/ysmandza/modules/ads-ioc/R1.0.0/bin/linux-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: lcls-motion-abstraction-sample.tsproj
 #        PLC name: motion_abstraction_sample (motion_abstraction_sample Instance)
-# Generated using: pytmc 2.18.2
+# Generated using: pytmc 2.18.3.dev15+gf4ebce2dc.d20251015
 # Project version: unknown
 #    Project hash: unknown
 #     PLC IP/host: 172.21.148.154
@@ -23,12 +23,14 @@
 #   Tc3_Module: * (Beckhoff Automation GmbH)
 #
 ################### AUTO-GENERATED DO NOT EDIT ###################
+# Run common startup commands for linux soft IOC's
+< $(IOC_COMMON)/All/pre_linux.cmd
 < envPaths
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "" )
-epicsEnvSet("LOCATION", "PLC:motion_abstraction_sample" )
+epicsEnvSet("ENGINEER", "ysmandza" )
+epicsEnvSet("LOCATION", "TST:MOTION" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
 
@@ -47,7 +49,7 @@ epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
 
 # Add a route to the PLC automatically:
-system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.148.154 ^172.*$")
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.148.154 ^172.*")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -74,44 +76,123 @@ system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.148.154 ^172.*$")
 #                         arrives in the EPICS client.
 adsAsynPortDriverConfigure("$(ASYN_PORT)", "$(IPADDR)", "$(AMSID)", "$(AMS_PORT)", "$(ADS_MAX_PARAMS)", 0, 0, "$(ADS_SAMPLE_MS)", "$(ADS_MAX_DELAY_MS)", "$(ADS_TIMEOUT_MS)", "$(ADS_TIME_SOURCE)")
 
+## Asyn/ADS diagnostics configuration (always loaded)
+#define ASYN_TRACE_ERROR     0x0001
+#define ASYN_TRACEIO_DEVICE  0x0002
+#define ASYN_TRACEIO_FILTER  0x0004
+#define ASYN_TRACEIO_DRIVER  0x0008
+#define ASYN_TRACE_FLOW      0x0010
+#define ASYN_TRACE_WARNING   0x0020
+#define ASYN_TRACE_INFO      0x0040
+asynSetTraceMask("$(ASYN_PORT)", -1, 0x41)
+
+#define ASYN_TRACEIO_NODATA 0x0000
+#define ASYN_TRACEIO_ASCII  0x0001
+#define ASYN_TRACEIO_ESCAPE 0x0002
+#define ASYN_TRACEIO_HEX    0x0004
+asynSetTraceIOMask("$(ASYN_PORT)", -1, 2)
+
+#define ASYN_TRACEINFO_TIME 0x0001
+#define ASYN_TRACEINFO_PORT 0x0002
+#define ASYN_TRACEINFO_SOURCE 0x0004
+#define ASYN_TRACEINFO_THREAD 0x0008
+asynSetTraceInfoMask("$(ASYN_PORT)", -1, 5)
+
+#define AMPLIFIER_ON_FLAG_CREATE_AXIS  1
+#define AMPLIFIER_ON_FLAG_WHEN_HOMING  2
+#define AMPLIFIER_ON_FLAG_USING_CNEN   4
+
 cd "$(ADS_IOC_TOP)/db"
 
+########## Motor Configuration Block ##########
+epicsEnvSet("MOTOR_PORT",     "PLC_ADS")
+epicsEnvSet("PREFIX",         "TST:MOTION:")
+epicsEnvSet("NUMAXES",        "4")
+epicsEnvSet("MOVE_POLL_RATE", "200")
+epicsEnvSet("IDLE_POLL_RATE", "1000")
 
-dbLoadRecords("iocSoft.db", "IOC=PLC:motion_abstraction_sample")
-dbLoadRecords("save_restoreStatus.db", "P=PLC:motion_abstraction_sample:")
+## Bulk stream operations
+epicsEnvSet("STREAM_PROTOCOL_PATH", "$(ADS_IOC_TOP)/db")
+
+
+epicsEnvSet("AXIS_NO",         "1")
+epicsEnvSet("MOTOR_PREFIX",    "TST:MOTION:")
+epicsEnvSet("MOTOR_NAME",      "SLITX")
+epicsEnvSet("MOTOR_ADS_PATH",  "MAIN.slitX")
+epicsEnvSet("DESC",            "MAIN.slitX / Axis 1")
+epicsEnvSet("EGU",             "mm")
+epicsEnvSet("PREC",            "3")
+epicsEnvSet("AXISCONFIG",      "")
+epicsEnvSet("ECAXISFIELDINIT", "")
+epicsEnvSet("AMPLIFIER_FLAGS", "")
+# ---- StreamDevice Motor Axis Records (FB_MotionStage) ----
+# Loads the StreamDevice-based records for this FB_MotionStage axis.
+dbLoadRecords("motor.template", "PORT=$(ASYN_PORT), ADSPORT=$(AMS_PORT), ADSPATH=$(MOTOR_ADS_PATH), PREFIX=$(MOTOR_PREFIX), M=$(MOTOR_NAME), PREC=$(PREC)")
+
+epicsEnvSet("AXIS_NO",         "2")
+epicsEnvSet("MOTOR_PREFIX",    "TST:MOTION:")
+epicsEnvSet("MOTOR_NAME",      "SLITY")
+epicsEnvSet("MOTOR_ADS_PATH",  "MAIN.slitY")
+epicsEnvSet("DESC",            "MAIN.slitY / Axis 2")
+epicsEnvSet("EGU",             "mm")
+epicsEnvSet("PREC",            "3")
+epicsEnvSet("AXISCONFIG",      "")
+epicsEnvSet("ECAXISFIELDINIT", "")
+epicsEnvSet("AMPLIFIER_FLAGS", "")
+# ---- StreamDevice Motor Axis Records (FB_MotionStage) ----
+# Loads the StreamDevice-based records for this FB_MotionStage axis.
+dbLoadRecords("motor.template", "PORT=$(ASYN_PORT), ADSPORT=$(AMS_PORT), ADSPATH=$(MOTOR_ADS_PATH), PREFIX=$(MOTOR_PREFIX), M=$(MOTOR_NAME), PREC=$(PREC)")
+
+epicsEnvSet("AXIS_NO",         "3")
+epicsEnvSet("MOTOR_PREFIX",    "TST:MOTION:")
+epicsEnvSet("MOTOR_NAME",      "SLITZ")
+epicsEnvSet("MOTOR_ADS_PATH",  "MAIN.slitZ")
+epicsEnvSet("DESC",            "MAIN.slitZ / Axis 3")
+epicsEnvSet("EGU",             "mm")
+epicsEnvSet("PREC",            "3")
+epicsEnvSet("AXISCONFIG",      "")
+epicsEnvSet("ECAXISFIELDINIT", "")
+epicsEnvSet("AMPLIFIER_FLAGS", "")
+# ---- StreamDevice Motor Axis Records (FB_MotionStage) ----
+# Loads the StreamDevice-based records for this FB_MotionStage axis.
+dbLoadRecords("motor.template", "PORT=$(ASYN_PORT), ADSPORT=$(AMS_PORT), ADSPATH=$(MOTOR_ADS_PATH), PREFIX=$(MOTOR_PREFIX), M=$(MOTOR_NAME), PREC=$(PREC)")
+
+
+dbLoadRecords("iocSoft.db", "IOC=TST:MOTION")
+dbLoadRecords("save_restoreStatus.db", "P=TST:MOTION:")
 dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
 ## TwinCAT task, application, and project information databases ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:motion_abstraction_sample,IDX=1,TASK_PORT=350")
-dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:motion_abstraction_sample")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=TST:MOTION,IDX=1,TASK_PORT=350")
+dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=TST:MOTION")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:motion_abstraction_sample,PROJECT=lcls-motion-abstraction-sample.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.2,PLC_HOST=172.21.148.154")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=TST:MOTION,PROJECT=lcls-motion-abstraction-sample.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.3.dev15+gf4ebce2dc.d20251015,PLC_HOST=172.21.148.154")
 
 #   LCLS General: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=TST:MOTION,DEPENDENCY=LCLS_General,VERSION=*,VENDOR=SLAC")
 #   LCLS_OOPMotion: * (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=LCLS_OOPMotion,VERSION=*,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=TST:MOTION,DEPENDENCY=LCLS_OOPMotion,VERSION=*,VENDOR=SLAC")
 #   Tc2_MC2: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=TST:MOTION,DEPENDENCY=Tc2_MC2,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_NC: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc2_NC,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=TST:MOTION,DEPENDENCY=Tc2_NC,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_Standard: * -> 3.4.5.0 (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc2_Standard,VERSION=3.4.5.0,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=TST:MOTION,DEPENDENCY=Tc2_Standard,VERSION=3.4.5.0,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_System: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc2_System,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=TST:MOTION,DEPENDENCY=Tc2_System,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 #   Tc3_Module: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:motion_abstraction_sample,DEPENDENCY=Tc3_Module,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=TST:MOTION,DEPENDENCY=Tc3_Module,VERSION=*,VENDOR=Beckhoff Automation GmbH")
 
 cd "$(IOC_TOP)"
 
 ## PLC Project Database files ##
-dbLoadRecords("motion_abstraction_sample.db", "PORT=$(ASYN_PORT),PREFIX=PLC:motion_abstraction_sample:,IOCNAME=$(IOC),IOC=$(IOC)")
+dbLoadRecords("motion_abstraction_sample.db", "PORT=$(ASYN_PORT),PREFIX=TST:MOTION:,IOCNAME=$(IOC),IOC=$(IOC)")
 
 # Total records: 198
 callbackSetQueueSize(2396)
 
 # Autosave and archive settings:
-save_restoreSet_status_prefix("PLC:motion_abstraction_sample:")
+save_restoreSet_status_prefix("TST:MOTION:")
 save_restoreSet_IncompleteSetsOk(1)
 save_restoreSet_DatedBackupFiles(1)
 set_pass0_restoreFile("info_positions.sav")

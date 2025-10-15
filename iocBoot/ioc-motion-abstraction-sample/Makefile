@@ -1,4 +1,5 @@
-IOC_TOP=/reg/g/pcds/epics/ioc/common/ads-ioc/R0.8.0
+#IOC_TOP=/reg/g/pcds/epics/ioc/common/ads-ioc/R0.8.0
+IOC_TOP=/cds/home/y/ysmandza/modules/ads-ioc/R1.0.0
 IOC_INSTANCE_PATH := $(shell pwd)
 
 # Set PRODUCTION_IOC to 1 to move from a testing to a production IOC:
@@ -9,7 +10,7 @@ PROJECT_PATH := ../../lcls-motion-abstraction-sample.tsproj
 PLC := motion_abstraction_sample
 
 PYTMC_OPTS :=
-PREFIX := PLC:$(PLC)
+PREFIX := TST:MOTION
 
 # With two $$, as in $$(IOC) below, this will be expanded in the
 # environment of st.cmd:
